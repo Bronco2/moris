@@ -78,6 +78,7 @@ func _process(delta):
 func has_mort(vida):
 	if vida <= 0:
 		mort = true
+		get_tree().change_scene("res://pantalla_mort.tscn")
 
 func personatge():
 	pass
@@ -118,8 +119,6 @@ func anima(velocitat, atacant, tipus_atac, mort, curant):
 func perd_vida(nova_vida):
 	vida = nova_vida
 	emit_signal("canvi_vida", nova_vida)
-	if vida <= 0:
-		queue_free()
 
 func perd_mana(nou_mana):
 	mana = nou_mana
