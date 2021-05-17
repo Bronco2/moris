@@ -49,10 +49,10 @@ font_data = ExtResource( 2 )
 script = ExtResource( 1 )
 
 [node name="fons_substitud" type="ColorRect" parent="."]
-margin_left = -62.0
-margin_top = -25.0
-margin_right = 1121.0
-margin_bottom = 664.0
+margin_left = -58.0
+margin_top = -26.0
+margin_right = 1125.0
+margin_bottom = 663.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

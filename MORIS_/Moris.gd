@@ -13,6 +13,7 @@ var atacant = false
 var mort = false
 var curant = false
 var tipus_atac = 0
+var pot_atacar = true
 var animacio = ""
 var mana:int = 500 setget perd_mana
 var vida:int = 500 setget perd_vida
@@ -42,34 +43,37 @@ func _process(delta):
 		velocitat.y += gravetat
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		#atacs:(activar i desactivar area)
-		if Input.is_action_just_pressed("atac1"):
-			atacant = true
-			tipus_atac = 1
-			
-			if mana <= 470:
-				self.mana += 30
-			else:
-				while mana < 500:
-					self.mana += 10
-			$area_atac/colision_atac.disabled = false
-		if mana >= 30:
-			if Input.is_action_just_pressed("atac2"):
+		if pot_atacar == true:
+			if Input.is_action_just_pressed("atac1"):
 				atacant = true
-				self.mana -= 30
-				tipus_atac = 2
-			$area_atac/colision_atac.disabled = false
+				tipus_atac = 1
+				pot_atacar = false
+				$pot_atacar.start()
+				$area_atac/colision_atac.disabled = false
+			if mana >= 30:
+				if Input.is_action_just_pressed("atac2"):
+					atacant = true
+					self.mana -= 30
+					tipus_atac = 2
+					pot_atacar = false
+					$pot_atacar.start()
+				$area_atac/colision_atac.disabled = false
 		if atacant == false:
 			$area_atac/colision_atac.disabled = true
 			tipus_atac = 0
-		if mana >= 30:
+		if mana >= 30 and vida < 500:
 			if Input.is_action_just_pressed("curar"):
 				curant = true
-				self.mana -= 30
-				self.vida += 30
+				if vida >= 470:
+					self.vida = 500
+				else:
+					self.mana -= 30
+					self.vida += 30
 		#funcio que anima segons el que estigui fent el personantge.
 	has_mort(vida)
 	anima(velocitat, atacant, tipus_atac, mort, curant)
 	$Label.text = animacio
+	$text_vida.text = str(vida)
 
 func has_mort(vida):
 	if vida <= 0:
@@ -149,3 +153,20 @@ func surtdaigua():
 	gravetat = gravetat_normal
 	no_esta_aigua = true
 	salt = salt_normal
+
+
+func _on_area_atac_body_entered(body):
+	if body.has_method("enemic"):
+		if tipus_atac == 1:
+			body.vida -= 30
+			if mana <= 470:
+				self.mana += 30
+			else:
+				while mana < 500:
+					self.mana += 10
+		if tipus_atac == 2:
+			body.vida -= 50
+
+
+func _on_pot_atacar_timeout():
+	pot_atacar = true
