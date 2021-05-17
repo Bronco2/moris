@@ -1,0 +1,449 @@
+[gd_scene load_steps=34 format=2]
+
+[ext_resource path="res://fotos/fletxa_esq.png" type="Texture" id=1]
+[ext_resource path="res://fotos/mouse-left-button.png" type="Texture" id=2]
+[ext_resource path="res://fotos/boton-derecho-del-mouse.png" type="Texture" id=3]
+[ext_resource path="res://pantalla_controls.gd" type="Script" id=4]
+[ext_resource path="res://lletres/Scratch Boys.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=24]
+size = 54
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=25]
+size = 36
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 36
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=27]
+size = 36
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=28]
+size = 36
+font_data = ExtResource( 5 )
+
+[node name="pantalla_controls" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="fondo" type="ColorRect" parent="."]
+light_mask = 2
+margin_left = -46.0
+margin_top = -14.0
+margin_right = 1053.0
+margin_bottom = 637.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Button" parent="."]
+margin_left = 159.006
+margin_top = 149.0
+margin_right = 219.006
+margin_bottom = 209.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "W"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="A" type="Button" parent="."]
+margin_left = 95.0
+margin_top = 213.0
+margin_right = 155.0
+margin_bottom = 273.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="S" type="Button" parent="."]
+margin_left = 159.0
+margin_top = 213.0
+margin_right = 219.0
+margin_bottom = 273.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "S"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="D" type="Button" parent="."]
+margin_left = 223.0
+margin_top = 213.0
+margin_right = 283.0
+margin_bottom = 273.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "D"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="F" type="Button" parent="."]
+margin_left = 94.0
+margin_top = 405.0
+margin_right = 154.0
+margin_bottom = 465.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "F"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="O" type="Button" parent="."]
+margin_left = 94.0
+margin_top = 469.0
+margin_right = 154.0
+margin_bottom = 529.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "O"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 213.0
+margin_right = 572.0
+margin_bottom = 273.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "P"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="I" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 469.0
+margin_right = 572.0
+margin_bottom = 529.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "I"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q" type="Button" parent="."]
+margin_left = 832.0
+margin_top = 173.0
+margin_right = 892.0
+margin_bottom = 233.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 11 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Q"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="U" type="Button" parent="."]
+margin_left = 281.682
+margin_top = 405.0
+margin_right = 341.682
+margin_bottom = 465.0
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+text = "U"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fletxa_E" type="Button" parent="."]
+margin_left = 584.0
+margin_top = 437.0
+margin_right = 1096.0
+margin_bottom = 949.0
+rect_scale = Vector2( 0.117, 0.115 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fletxa_D" type="Button" parent="."]
+margin_left = 640.0
+margin_top = 181.0
+margin_right = 1152.0
+margin_bottom = 693.0
+rect_scale = Vector2( -0.115, 0.115 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+icon = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ratoli_D" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 149.0
+margin_right = 1024.0
+margin_bottom = 661.0
+rect_scale = Vector2( 0.117, 0.115 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ratoli_E" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 405.0
+margin_right = 1024.0
+margin_bottom = 917.0
+rect_scale = Vector2( 0.117, 0.115 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+icon = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="INICI" type="Button" parent="."]
+margin_left = 760.0
+margin_top = 413.0
+margin_right = 960.0
+margin_bottom = 488.0
+custom_styles/hover = SubResource( 21 )
+custom_styles/pressed = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.113725, 0.717647, 0.619608, 1 )
+custom_colors/font_color_pressed = Color( 0.113725, 0.717647, 0.619608, 1 )
+text = "INICI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="moviment" type="Label" parent="."]
+margin_left = 55.0
+margin_top = 85.0
+margin_right = 352.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 25 )
+text = "Direcció del moviment"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="escut" type="Label" parent="."]
+margin_left = 87.0
+margin_top = 330.0
+margin_right = 157.0
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 26 )
+text = "Escut"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pausa" type="Label" parent="."]
+margin_left = 824.0
+margin_top = 85.0
+margin_right = 899.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 26 )
+text = "Pausa"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="atac_especial" type="Label" parent="."]
+margin_left = 480.0
+margin_top = 85.0
+margin_right = 650.0
+margin_bottom = 135.0
+custom_fonts/font = SubResource( 26 )
+text = "Atac especial"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="atac-normal" type="Label" parent="."]
+margin_left = 464.0
+margin_top = 330.0
+margin_right = 634.0
+margin_bottom = 380.0
+custom_fonts/font = SubResource( 26 )
+text = "Atac normal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="curar" type="Label" parent="."]
+margin_left = 276.092
+margin_top = 331.293
+margin_right = 355.092
+margin_bottom = 394.293
+custom_fonts/font = SubResource( 27 )
+text = "Curar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 26.4866
+margin_top = 21.1893
+margin_right = 978.487
+margin_bottom = 71.1893
+custom_fonts/font = SubResource( 28 )
+text = "Per veure el ménu dels controls durant la partida clica el número 8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="INICI" to="." method="_on_INICI_pressed"]

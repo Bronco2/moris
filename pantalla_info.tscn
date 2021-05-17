@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://pantalla_info.gd" type="Script" id=1]
+[ext_resource path="res://lletres/Starjedi.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://lletres/Scratch Boys.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 23
+font_data = ExtResource( 2 )
+
+[node name="pantalla_info" type="Node2D"]
+scale = Vector2( 1.12633, 1.09117 )
+script = ExtResource( 1 )
+
+[node name="fons" type="ColorRect" parent="."]
+margin_left = -29.0
+margin_top = -21.0
+margin_right = 945.0
+margin_bottom = 567.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 372.484
+margin_top = 425.038
+margin_right = 572.484
+margin_bottom = 500.038
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.113725, 0.717647, 0.619608, 1 )
+custom_colors/font_color_pressed = Color( 0.113725, 0.717647, 0.619608, 1 )
+text = "INICI"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_top = 12.0809
+margin_right = 907.0
+margin_bottom = 329.081
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.835294, 0.807843, 0.0941176, 1 )
+custom_colors/font_outline_modulate = Color( 0.835294, 0.807843, 0.0941176, 1 )
+custom_colors/font_color_shadow = Color( 0.835294, 0.807843, 0.0941176, 1 )
+text = " El professor Moris es troba en una expedició a la selva de
+ Papua Antiga Guinea en busca d'una criatura fantàstica per
+ als seus estudis científics. Diuen que és un ésser molt perillós,
+ haurà d'anar amb compte! L'explorador ha investigat i creu
+ que ha de trobar les runes d'una antiga ciutat per tal de
+ trobar la criatura, ja que allà la concentració de energia
+ màgica és molt alta. Podràs ajudar a en Moris a creuar la
+ selva i aconseguir la seva missió?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

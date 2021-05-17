@@ -1,0 +1,398 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(2).jpeg" type="Texture" id=1]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(4).jpeg" type="Texture" id=2]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47.jpeg" type="Texture" id=3]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(7).jpeg" type="Texture" id=4]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(3).jpeg" type="Texture" id=5]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(5).jpeg" type="Texture" id=6]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(11).jpeg" type="Texture" id=7]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(8).jpeg" type="Texture" id=8]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(6).jpeg" type="Texture" id=9]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(10).jpeg" type="Texture" id=10]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(1).jpeg" type="Texture" id=11]
+[ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(9).jpeg" type="Texture" id=12]
+[ext_resource path="res://MORIS_/Moris.tscn" type="PackedScene" id=13]
+[ext_resource path="res://areaaigua.gd" type="Script" id=14]
+[ext_resource path="res://WhatsApp Image 2021-04-20 at 10.31.02.jpeg" type="Texture" id=15]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float epsilon = 0.1;
+uniform vec4 color_objectiu : hint_color = vec4(1);
+
+bool prou_semblants(vec4 color1, vec4 color2){
+	return length(color1 - color2) < epsilon;
+}
+
+void fragment(){
+	vec4 color_pixel = texture(TEXTURE, UV);
+	if (prou_semblants(color_pixel, color_objectiu)){
+		COLOR = vec4(0);
+	}else{
+		COLOR = color_pixel;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/epsilon = 0.2
+shader_param/color_objectiu = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 832, 0, 832, 352, 0, 352 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 96, 0, 928, 0, 928, 336, 96, 336 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 128, 0, 128, 48, 80, 784, 80, 816, 288, 816, 416, 0, 416 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 864, 0, 864, 352, 0, 352 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 848, 0, 848, 352, 0, 352 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 864, 0, 864, 320, 0, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 96, 0, 944, 0, 944, 336, 112, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 0, 160, 48, 112, 800, 112, 848, 160, 848, 416, 0, 416 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 0, 112, 48, 64, 800, 64, 848, 112, 848, 384, 0, 384 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 912, 432, 112, 432, 80, 272, 128, 96, 864, 96, 912, 144 )
+
+[sub_resource type="TileSet" id=13]
+0/name = "WhatsApp Image 2021-05-04 at 10.25.47.jpeg 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 544, 672, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "WhatsApp Image 2021-05-04 at 10.25.47.jpeg 1"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 336, 288, 944, 352 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 3 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "WhatsApp Image 2021-05-04 at 10.25.47(1).jpeg 2"
+2/texture = ExtResource( 11 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 336, 208, 960, 416 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 5 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "WhatsApp Image 2021-05-04 at 10.25.47(2).jpeg 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 320, 160, 864, 544 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 6 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "WhatsApp Image 2021-05-04 at 10.25.47(3).jpeg 4"
+4/texture = ExtResource( 5 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 336, 288, 848, 352 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 7 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "WhatsApp Image 2021-05-04 at 10.25.47(4).jpeg 5"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 336, 272, 864, 320 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 8 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "WhatsApp Image 2021-05-04 at 10.25.47(5).jpeg 6"
+6/texture = ExtResource( 6 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 240, 96, 944, 672 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 9 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "WhatsApp Image 2021-05-04 at 10.25.47(6).jpeg 7"
+7/texture = ExtResource( 9 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 336, 240, 848, 416 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 10 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "WhatsApp Image 2021-05-04 at 10.25.47(7).jpeg 8"
+8/texture = ExtResource( 4 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 336, 192, 864, 400 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 11 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "WhatsApp Image 2021-05-04 at 10.25.47(8).jpeg 9"
+9/texture = ExtResource( 8 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 256, 128, 928, 432 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 12 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "WhatsApp Image 2021-05-04 at 10.25.47(9).jpeg 10"
+10/texture = ExtResource( 12 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 320, 240, 864, 352 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape_one_way = false
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
+10/z_index = 0
+11/name = "WhatsApp Image 2021-05-04 at 10.25.47(10).jpeg 11"
+11/texture = ExtResource( 10 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 256, 256, 928, 336 )
+11/tile_mode = 0
+11/occluder_offset = Vector2( 0, 0 )
+11/navigation_offset = Vector2( 0, 0 )
+11/shape_offset = Vector2( 0, 0 )
+11/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+11/shape = SubResource( 4 )
+11/shape_one_way = false
+11/shape_one_way_margin = 1.0
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+11/z_index = 0
+12/name = "WhatsApp Image 2021-05-04 at 10.25.47(11).jpeg 12"
+12/texture = ExtResource( 7 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 320, 272, 864, 416 )
+12/tile_mode = 0
+12/occluder_offset = Vector2( 0, 0 )
+12/navigation_offset = Vector2( 0, 0 )
+12/shape_offset = Vector2( 0, 0 )
+12/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+12/shape_one_way = false
+12/shape_one_way_margin = 0.0
+12/shapes = [  ]
+12/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 480, 272, 0, 272, 48, 112, 432, 112 )
+
+[sub_resource type="TileSet" id=15]
+0/name = "WhatsApp Image 2021-04-20 at 10.31.02.jpeg 0"
+0/texture = ExtResource( 15 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 208, 208, 496, 736 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 14 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="bosc2" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+material = SubResource( 2 )
+tile_set = SubResource( 13 )
+cell_size = Vector2( 850, 320 )
+format = 1
+tile_data = PoolIntArray( -524276, 9, 0, -524275, 7, 0, -524274, 7, 0, -524273, 2, 0, -458740, 6, 0, -458739, 3, 0, -458738, 3, 0, -458737, 3, 0, -458731, 9, 0, -458730, 8, 0, -458729, 8, 0, -458728, 2, 0, -393197, 9, 0, -393196, 7, 0, -393195, 4, 0, -393194, 5, 0, -393193, 4, 0, -393192, 1, 0, -393183, 9, 0, -393182, 7, 0, -393181, 8, 0, -393180, 7, 0, -393179, 2, 0, -393170, 3, 0, -327661, 6, 0, -327660, 3, 0, -327659, 3, 0, -327658, 3, 0, -327657, 3, 0, -327656, 3, 0, -327648, 9, 0, -327647, 4, 0, -327646, 4, 0, -327645, 5, 0, -327644, 5, 0, -327643, 1, 0, -327633, 3, 0, -262139, 9, 0, -262138, 7, 0, -262137, 8, 0, -262136, 12, 0, -262135, 12, 0, -262134, 2, 0, -262112, 6, 0, -262111, 3, 0, -262110, 3, 0, -262109, 3, 0, -262108, 3, 0, -262107, 3, 0, -262096, 11, 0, -196603, 6, 0, -196602, 3, 0, -196601, 3, 0, -196600, 3, 0, -196599, 3, 0, -196598, 5, 0, -196597, 2, 0, -196560, 11, 0, -131062, 11, 0, -131061, 1, 0, -131024, 11, 0, -65536, 2, 0, -65526, 11, 0, -65525, 1, 0, -65488, 11, 0, 0, 1, 0, 10, 11, 0, 11, 1, 0, 48, 11, 0, 65536, 5, 0, 65537, 8, 0, 65538, 7, 0, 65539, 8, 0, 65540, 8, 0, 65541, 7, 0, 65542, 2, 0, 65546, 11, 0, 65547, 1, 0, 65561, 9, 0, 65562, 8, 0, 65563, 12, 0, 65564, 7, 0, 65565, 7, 0, 65566, 8, 0, 65567, 7, 0, 65568, 7, 0, 65569, 2, 0, 65584, 11, 0, 131072, 4, 0, 131073, 4, 0, 131074, 7, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 1, 0, 131080, 9, 0, 131081, 8, 0, 131082, 10, 0, 131083, 4, 0, 131084, 8, 0, 131085, 7, 0, 131086, 12, 0, 131087, 7, 0, 131088, 8, 0, 131089, 2, 0, 131097, 11, 0, 131098, 5, 0, 131099, 10, 0, 131100, 4, 0, 131101, 4, 0, 131102, 5, 0, 131103, 4, 0, 131104, 4, 0, 131105, 5, 0, 131106, 2, 0, 131120, 11, 0, 196608, 5, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 10, 0, 196613, 10, 0, 196614, 10, 0, 196615, 12, 0, 196616, 10, 0, 196617, 10, 0, 196618, 10, 0, 196619, 5, 0, 196620, 10, 0, 196621, 10, 0, 196622, 10, 0, 196623, 5, 0, 196624, 5, 0, 196625, 5, 0, 196626, 7, 0, 196627, 2, 0, 196633, 11, 0, 196634, 5, 0, 196635, 10, 0, 196636, 5, 0, 196637, 5, 0, 196638, 5, 0, 196639, 5, 0, 196640, 4, 0, 196641, 5, 0, 196642, 4, 0, 196643, 2, 0, 196656, 11, 0, 262144, 1, 0, 262148, 3, 0, 262149, 10, 0, 262150, 10, 0, 262151, 10, 0, 262152, 10, 0, 262153, 10, 0, 262154, 4, 0, 262155, 5, 0, 262156, 10, 0, 262157, 10, 0, 262158, 10, 0, 262159, 10, 0, 262160, 10, 0, 262161, 10, 0, 262162, 10, 0, 262163, 1, 0, 262169, 11, 0, 262170, 5, 0, 262171, 10, 0, 262172, 4, 0, 262173, 5, 0, 262174, 5, 0, 262175, 4, 0, 262176, 5, 0, 262177, 4, 0, 262178, 5, 0, 262179, 4, 0, 262180, 2, 0, 262192, 11, 0, 327680, 1, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 10, 0, 327694, 10, 0, 327695, 10, 0, 327696, 10, 0, 327697, 10, 0, 327698, 10, 0, 327699, 1, 0, 327705, 11, 0, 327706, 4, 0, 327707, 10, 0, 327708, 5, 0, 327709, 4, 0, 327710, 4, 0, 327711, 5, 0, 327712, 3, 0, 327713, 3, 0, 327714, 3, 0, 327715, 5, 0, 327716, 4, 0, 327717, 7, 0, 327718, 7, 0, 327719, 7, 0, 327720, 7, 0, 327728, 11, 0, 393216, 1, 0, 393229, 10, 0, 393230, 3, 0, 393231, 3, 0, 393232, 10, 0, 393233, 10, 0, 393234, 10, 0, 393235, 1, 0, 393241, 11, 0, 393242, 5, 0, 393243, 10, 0, 393244, 10, 0, 393245, 10, 0, 393246, 10, 0, 393247, 10, 0, 393251, 11, 0, 393252, 5, 0, 393253, 5, 0, 393254, 5, 0, 393255, 4, 0, 393256, 4, 0, 393264, 11, 0, 458752, 1, 0, 458765, 10, 0, 458768, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 3, 0, 458777, 6, 0, 458778, 10, 0, 458779, 10, 0, 458780, 10, 0, 458781, 10, 0, 458782, 10, 0, 458783, 10, 0, 458787, 11, 0, 458788, 5, 0, 458789, 3, 0, 458790, 3, 0, 458791, 3, 0, 458792, 3, 0, 458800, 11, 0, 524288, 1, 0, 524293, 9, 0, 524294, 8, 0, 524295, 2, 0, 524301, 10, 0, 524314, 6, 0, 524315, 3, 0, 524316, 3, 0, 524317, 3, 0, 524318, 3, 0, 524319, 3, 0, 524320, 12, 0, 524323, 11, 0, 524324, 1, 0, 524336, 11, 0, 589824, 1, 0, 589829, 6, 0, 589830, 3, 0, 589831, 3, 0, 589837, 10, 0, 589856, 6, 0, 589857, 7, 0, 589858, 7, 0, 589859, 4, 0, 589860, 1, 0, 589868, 9, 0, 589869, 7, 0, 589870, 8, 0, 589871, 8, 0, 655360, 1, 0, 655373, 10, 0, 655393, 6, 0, 655394, 3, 0, 655395, 3, 0, 655396, 3, 0, 655404, 11, 0, 720896, 1, 0, 720909, 10, 0, 720939, 9, 0, 786432, 1, 0, 786445, 10, 0, 786461, 9, 0, 786462, 8, 0, 786463, 2, 0, 786474, 9, 0, 851968, 5, 0, 851969, 8, 0, 851970, 8, 0, 851971, 8, 0, 851972, 7, 0, 851973, 7, 0, 851974, 7, 0, 851975, 7, 0, 851976, 8, 0, 851977, 7, 0, 851978, 8, 0, 851979, 2, 0, 851981, 10, 0, 851997, 6, 0, 851998, 3, 0, 851999, 3, 0, 852008, 9, 0, 852009, 8, 0, 917514, 5, 0, 917515, 5, 0, 917516, 7, 0, 917517, 10, 0, 917518, 7, 0, 917519, 8, 0, 917520, 8, 0, 917521, 7, 0, 917522, 7, 0, 917523, 8, 0, 917524, 7, 0, 917525, 8, 0, 917526, 8, 0, 917527, 8, 0, 917528, 2, 0, 917543, 9, 0, 917544, 4, 0, 983051, 4, 0, 983052, 5, 0, 983053, 4, 0, 983054, 4, 0, 983055, 4, 0, 983056, 5, 0, 983057, 5, 0, 983058, 4, 0, 983059, 4, 0, 983060, 5, 0, 983061, 4, 0, 983062, 5, 0, 983063, 5, 0, 983064, 5, 0, 983065, 2, 0, 983078, 9, 0, 983079, 4, 0, 983080, 4, 0, 1048600, 4, 0, 1048601, 5, 0, 1048602, 12, 0, 1048603, 12, 0, 1048604, 12, 0, 1048605, 12, 0, 1048606, 12, 0, 1048607, 12, 0, 1048608, 12, 0, 1048609, 12, 0, 1048610, 12, 0, 1048611, 12, 0, 1048612, 12, 0, 1048613, 12, 0, 1048614, 5, 0, 1048615, 5, 0, 1048616, 4, 0, 1114137, 4, 0, 1114138, 5, 0, 1114139, 5, 0, 1114140, 5, 0, 1114141, 5, 0, 1114142, 4, 0, 1114143, 5, 0, 1114144, 4, 0, 1114145, 4, 0, 1114146, 5, 0, 1114147, 5, 0, 1114148, 4, 0, 1114149, 5, 0, 1114150, 5, 0, 1179674, 5, 0, 1179675, 4, 0, 1179676, 4, 0, 1179677, 5, 0, 1179678, 5, 0, 1179679, 4, 0, 1179680, 4, 0, 1179681, 4, 0, 1179682, 4, 0, 1179683, 5, 0, 1179684, 5, 0, 1179685, 5, 0 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+material = SubResource( 2 )
+scale = Vector2( 2, 2 )
+tile_set = SubResource( 15 )
+cell_size = Vector2( 225, 100 )
+format = 1
+tile_data = PoolIntArray( -720876, 0, 0, -589777, 0, 0, -524254, 0, 0, -393184, 0, 0, -327622, 0, 0, -262137, 0, 0, -262095, 0, 0, -262089, 0, 0, -196585, 0, 0, -196578, 0, 0, 524326, 0, 0, 786472, 0, 0, 852047, 0, 0, 983047, 0, 0, 983055, 0, 0, 983058, 0, 0, 1048618, 0, 0, 1179686, 0, 0, 1179692, 0, 0, 1376308, 0, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 11353.8, 1326.42 )
+rotation = -5.24349
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -6.23047, -623.788, -867.787, 796.213, -355.695, 1124.85, 93.2915, 423.666, 2322.55, 1714.57, 2859.14, 2042.37, 3308.89, 1276.7, 784.665, -190.425, 1678.08, -1631.71, 1921.71, -1488.6, 3226.02, -3655.96, 2388.72, -4116.58, 675.542, -1253.17, 163.069, -1522.98, -264.211, -822.137 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( 4.55859, -7.75977 )
+polygon = PoolVector2Array( -1073.74, 1710.46, -1479.13, 2400.61, -1236.27, 2613.33, -3336.63, 6248.65, -3597.06, 6095.68, -4053.72, 6843.29, -4285.83, 6671.91, -1744.12, 2315.02, -2007.65, 2107.68, -1568.57, 1419.81 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -3656.41, 1180.06, -4500.26, 2636.55, -4288.09, 2772.86, -3379.82, 1365.9 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 6267.38, -8803.23, 6524.59, -8662.48, 9054.36, -12945.6, 9352.78, -12909.3, 9792.35, -13610.3, 9571.04, -13754.2, 9063.39, -13079.3, 8555.16, -13350, 6800.01, -10433, 5497.76, -11197.9, 5064.26, -10507.3, 6649.83, -9562 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 8752.91, -7329.67, 8968.69, -7228.62, 14179, -15957, 13913.1, -16071.6 )
+
+[node name="moris" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1106.19, -984.726 )
+[connection signal="body_entered" from="Area2D" to="moris" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="moris" method="_on_Area2D_body_exited"]
+
+[editable path="moris"]
