@@ -14,6 +14,7 @@ var mort = false
 var curant = false
 var tipus_atac = 0
 var pot_atacar = true
+var pot_curarse = true
 var animacio = ""
 var mana:int = 500 setget perd_mana
 var vida:int = 500 setget perd_vida
@@ -45,17 +46,17 @@ func _process(delta):
 		#atacs:(activar i desactivar area)
 		if pot_atacar == true:
 			if Input.is_action_just_pressed("atac1"):
+				pot_atacar = false
 				atacant = true
 				tipus_atac = 1
-				pot_atacar = false
 				$pot_atacar.start()
 				$area_atac/colision_atac.disabled = false
 			if mana >= 30:
 				if Input.is_action_just_pressed("atac2"):
+					pot_atacar = false
 					atacant = true
 					self.mana -= 30
 					tipus_atac = 2
-					pot_atacar = false
 					$pot_atacar.start()
 				$area_atac/colision_atac.disabled = false
 		if atacant == false:
@@ -63,17 +64,20 @@ func _process(delta):
 			tipus_atac = 0
 		if mana >= 30 and vida < 500:
 			if Input.is_action_just_pressed("curar"):
+				pot_curarse = false
 				curant = true
 				if vida >= 470:
 					self.vida = 500
 				else:
 					self.mana -= 30
 					self.vida += 30
+				$curar.start()
 		#funcio que anima segons el que estigui fent el personantge.
 	has_mort(vida)
 	anima(velocitat, atacant, tipus_atac, mort, curant)
 	$Label.text = animacio
 	$text_vida.text = str(vida)
+	print(pot_curarse)
 
 func has_mort(vida):
 	if vida <= 0:
@@ -102,7 +106,7 @@ func anima(velocitat, atacant, tipus_atac, mort, curant):
 	if velocitat.y < 0 and not is_on_floor():	#poso iddle per quan tinguem el que es de veritat
 		$AnimatedSprite.play("iddle")
 		animacio = "Saltant"
-	if atacant == true:
+	if atacant == true and pot_atacar == false:
 		if tipus_atac == 1:
 			$AnimatedSprite.play("iddle")	#poso iddle per quan tinguem el que es de veritat
 			animacio = "Atacant"
@@ -112,7 +116,7 @@ func anima(velocitat, atacant, tipus_atac, mort, curant):
 	if mort == true:
 		$AnimatedSprite.play("iddle") #poso iddle per quan tinguem el que es de veritat
 		animacio = "Morint"
-	if curant == true:
+	if curant == true and pot_curarse == false:
 		$AnimatedSprite.play("iddle")
 		animacio = "curant-se"
 
@@ -169,3 +173,7 @@ func _on_area_atac_body_entered(body):
 
 func _on_pot_atacar_timeout():
 	pot_atacar = true
+
+
+func _on_curar_timeout():
+	pot_curarse = true
