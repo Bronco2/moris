@@ -15,12 +15,15 @@ var curant = false
 var tipus_atac = 0
 var pot_atacar = true
 var pot_curarse = true
+var contador = 0
+var sesta_ofagant = false
 var animacio = ""
 var mana:int = 500 setget perd_mana
 var vida:int = 500 setget perd_vida
 
 signal canvi_vida(nova_vida)
 signal canvi_mana(nou_mana)
+signal oxigen(no_esta_aigua, contador)
 
 func _ready():
 	Global.Moris = self 
@@ -74,10 +77,11 @@ func _process(delta):
 				$curar.start()
 		#funcio que anima segons el que estigui fent el personantge.
 	has_mort(vida)
+	bombolles()
+	ofagantse()
 	anima(velocitat, atacant, tipus_atac, mort, curant)
 	$Label.text = animacio
 	$text_vida.text = str(vida)
-	print(pot_curarse)
 
 func has_mort(vida):
 	if vida <= 0:
@@ -128,7 +132,6 @@ func perd_mana(nou_mana):
 	mana = nou_mana
 	emit_signal("canvi_mana", nou_mana)
 
-
 func _on_AnimatedSprite_animation_finished():
 	#if $AnimatedSprie.animation == "atac1":
 		#atacant = false
@@ -146,16 +149,31 @@ func _on_AnimatedSprite_animation_finished():
 	
 	
 func entraaaigua():
-	print("A")
+	print("soc a dins")
 	gravetat = gravetat_normal/3
 	no_esta_aigua = false
 	salt = salt_normal/1.3
 
 func surtdaigua():
-	print("B")
+	print("soc a fora")
 	gravetat = gravetat_normal
 	no_esta_aigua = true
 	salt = salt_normal
+
+
+func bombolles():
+	if no_esta_aigua == false:
+		emit_signal("oxigen", no_esta_aigua, contador)
+	if no_esta_aigua == true:
+		emit_signal("oxigen", no_esta_aigua, contador)
+		contador = 0
+		sesta_ofagant = false
+	if contador == 15:
+		sesta_ofagant = true
+
+func ofagantse():
+	if sesta_ofagant == true and no_esta_aigua == false:
+		self.vida -= 1
 
 
 func _on_area_atac_body_entered(body):
@@ -177,3 +195,7 @@ func _on_pot_atacar_timeout():
 
 func _on_curar_timeout():
 	pot_curarse = true
+
+
+func _on_aigua_timeout():
+	contador += 1
