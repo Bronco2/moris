@@ -393,7 +393,7 @@ polygon = PoolVector2Array( 6267.38, -8803.23, 6524.59, -8662.48, 9054.36, -1294
 polygon = PoolVector2Array( 8752.91, -7329.67, 8968.69, -7228.62, 14179, -15957, 13913.1, -16071.6 )
 
 [node name="moris" parent="." instance=ExtResource( 13 )]
-position = Vector2( 914.407, -828.902 )
+position = Vector2( 431.143, -776.045 )
 
 [node name="enemic_1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 5316.9, -1601.01 )
