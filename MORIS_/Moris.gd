@@ -81,7 +81,6 @@ func _process(delta):
 	ofagantse()
 	anima(velocitat, atacant, tipus_atac, mort, curant)
 	$Label.text = animacio
-	$text_vida.text = str(vida)
 
 func has_mort(vida):
 	if vida <= 0:
@@ -168,7 +167,7 @@ func bombolles():
 		emit_signal("oxigen", no_esta_aigua, contador)
 		contador = 0
 		sesta_ofagant = false
-	if contador == 15:
+	if contador == 8:
 		sesta_ofagant = true
 
 func ofagantse():

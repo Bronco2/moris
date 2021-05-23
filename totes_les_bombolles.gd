@@ -18,19 +18,19 @@ func _on_Moris_oxigen(no_esta_aigua, contador):
 		visible = true
 		if contador == 1:
 			$bombi_8.visible = false
-		if contador == 3:
+		if contador == 2:
 			$bombi_7.visible = false
-		if contador == 5:
+		if contador == 3:
 			$bombi_6.visible = false
-		if contador == 7:
+		if contador == 4:
 			$bombi_5.visible = false
-		if contador == 9:
+		if contador == 5:
 			$bombi_4.visible = false
-		if contador == 11:
+		if contador == 6:
 			$bombi_3.visible = false
-		if contador == 13:
+		if contador == 7:
 			$bombi_2.visible = false
-		if contador == 15:
+		if contador == 8:
 			$bombi_1.visible = false
 	if no_esta_aigua == true:
 		visible = false

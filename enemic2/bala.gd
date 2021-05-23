@@ -19,5 +19,6 @@ func _process(delta):
 
 
 func _on_Area2D_body_entered(body):
+	queue_free()
 	if body.has_method("personatge"):
 			body.vida -= 50

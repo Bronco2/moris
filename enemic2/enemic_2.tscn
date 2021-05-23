@@ -16,14 +16,14 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 198.603, 137.085 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 36
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1628.47, 201.525 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 912.923, 209.305 )
 
 [node name="Node2D" type="Node2D"]
@@ -52,7 +52,7 @@ margin_left = 100.683
 margin_top = -408.159
 margin_right = 478.683
 margin_bottom = -228.159
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -69,7 +69,7 @@ position = Vector2( -749.13, -866.803 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="radar_esq"]
 position = Vector2( -845.261, 8.43007 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="bales" type="Node" parent="."]
 script = ExtResource( 3 )
