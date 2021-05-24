@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(2).jpeg" type="Texture" id=1]
 [ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(4).jpeg" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://WhatsApp Image 2021-04-20 at 10.31.02.jpeg" type="Texture" id=15]
 [ext_resource path="res://enemic1/enemic_1.tscn" type="PackedScene" id=16]
 [ext_resource path="res://enemic2/enemic_2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://escut.tscn" type="PackedScene" id=18]
+[ext_resource path="res://porta.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -393,13 +395,19 @@ polygon = PoolVector2Array( 6267.38, -8803.23, 6524.59, -8662.48, 9054.36, -1294
 polygon = PoolVector2Array( 8752.91, -7329.67, 8968.69, -7228.62, 14179, -15957, 13913.1, -16071.6 )
 
 [node name="moris" parent="." instance=ExtResource( 13 )]
-position = Vector2( 431.143, -776.045 )
+position = Vector2( 265.021, -1274.41 )
 
 [node name="enemic_1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 5316.9, -1601.01 )
 
 [node name="enemic_2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 5457.94, 1017.33 )
+
+[node name="escut" parent="." instance=ExtResource( 18 )]
+position = Vector2( 29287, 2834.49 )
+
+[node name="porta" parent="." instance=ExtResource( 19 )]
+position = Vector2( 43929.9, 2602.41 )
 [connection signal="body_entered" from="Area2D" to="moris" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="moris" method="_on_Area2D_body_exited"]
 

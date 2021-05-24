@@ -12,6 +12,8 @@ var salt_normal = 3000
 var atacant = false
 var mort = false
 var curant = false
+var caminant = false
+var saltant = false
 var tipus_atac = 0
 var contador = 0
 var sesta_ofagant = false
@@ -31,26 +33,30 @@ func _process(delta):
 	if mort == false:
 		velocitat.x = 0
 		#moviments(dreta, esquerra, adalt, escut, atac1, atac2, pausa)-->el que he posat per clicar el boto
-		if Input.is_action_pressed("dreta"):
+		if Input.is_action_pressed("dreta") and atacant == false and curant == false:
 			velocitat += Vector2.RIGHT * velocitat_max
-		if Input.is_action_pressed("esquerra"):
+			caminant = true
+		if Input.is_action_pressed("esquerra") and atacant == false and curant == false:
 			velocitat += Vector2.LEFT * velocitat_max
+			caminant = true
 		if no_esta_aigua:
 			if is_on_floor():
-				if Input.is_action_pressed("adalt"):
+				if Input.is_action_pressed("adalt") and atacant == false and curant == false:
 					velocitat.y = velocitat.y - salt
+					saltant = true
 		else:
-			if Input.is_action_just_pressed("adalt"):
+			if Input.is_action_just_pressed("adalt") and atacant == false and curant == false:
 				velocitat.y = velocitat.y - salt
+				saltant = true
 		velocitat.y += gravetat
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		#atacs:(activar i desactivar area)
-		if Input.is_action_just_pressed("atac1"):
+		if Input.is_action_just_pressed("atac1") and curant == false:
 			atacant = true
 			tipus_atac = 1
 			$area_atac/colision_atac.disabled = false
 		if mana >= 30:
-			if Input.is_action_just_pressed("atac2"):
+			if Input.is_action_just_pressed("atac2") and curant == false:
 				atacant = true
 				self.mana -= 30
 				tipus_atac = 2
@@ -59,14 +65,29 @@ func _process(delta):
 			$area_atac/colision_atac.disabled = true
 			tipus_atac = 0
 		if mana >= 30 and vida < 500:
-			if Input.is_action_just_pressed("curar"):
+			if Input.is_action_just_pressed("curar") and atacant == false:
 				curant = true
 				if vida >= 470:
 					self.vida = 500
 				else:
 					self.mana -= 30
 					self.vida += 30
-		#funcio que anima segons el que estigui fent el personantge.
+	#variables de false i true
+		if atacant:
+			curant = false
+			caminant = false
+			saltant = false
+		if curant:
+			saltant = false
+			caminant = false
+			atacant = false
+		if caminant:
+			atacant = false
+			curant = false
+		if saltant:
+			curant = false
+			atacant = false
+	
 	has_mort(vida)
 	bombolles()
 	ofagantse()
@@ -83,7 +104,7 @@ func personatge():
 
 
 func anima(velocitat, atacant, tipus_atac, mort, curant): 
-	if velocitat.length() == 0:
+	if velocitat.length() == 0 and atacant == false and curant == false:
 		$AnimatedSprite.play("iddle")
 		animacio = "Quiet"
 	if velocitat.x > 0:

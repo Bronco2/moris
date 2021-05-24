@@ -22,4 +22,6 @@ func _on_Area2D_body_entered(body):
 	if not body.has_method("enemic"):
 		queue_free()
 	if body.has_method("personatge"):
-			body.vida -= 50
+		if Global.Escut == true:
+			body.vida += 20
+		body.vida -= 50

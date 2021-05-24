@@ -11,9 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass	
+func _process(delta):
+	Global.Escut = false
 
 func _on_Button_JUGAR_pressed():
 	get_tree().change_scene("res://bosc2.tscn")

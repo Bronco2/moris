@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var vida = 100
 var velocitat = Vector2(0,0)
 var velocitat_max = 300
 var pot_atacar = true
@@ -12,7 +11,7 @@ var num_vida = ""
 
 
 func _ready():
-	vida = 100
+	pass
 
 
 func _process(delta):
@@ -24,9 +23,7 @@ func _process(delta):
 				velocitat += Vector2.RIGHT * velocitat_max
 	velocitat = move_and_slide(velocitat)
 	
-	mort()
 	$Label.text = animant
-	$vida.text = str(vida)
 
 func animacio(pot_caminar, pot_atacar): #les animacions encara que no estiguin tmp funcionen
 	if velocitat.length() == 0:
@@ -45,10 +42,6 @@ func animacio(pot_caminar, pot_atacar): #les animacions encara que no estiguin t
 		$AnimatedSprite.play("caminant")	#canviar a animar l'atac pero encara no ho tenim
 		animant = "atacant"
 
-func mort():
-	if vida <= 0:
-		queue_free()
-
 func enemic():
 	pass
 
@@ -57,6 +50,8 @@ func enemic():
 #anar-se morint, quan surti deixara de morir (recomancacio del jordi:rep_mal)
 func _on_Area2D_body_entered(body):
 	if body.has_method("personatge"):
+		if Global.Escut == true:
+			body.vida += 20
 		body.vida -= 50
 
 
@@ -84,3 +79,4 @@ func _on_rebot_esquerra_body_entered(body):
 
 func _on_timer_movent_timeout():
 	pot_moure = true
+

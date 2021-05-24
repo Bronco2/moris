@@ -13,7 +13,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 83.3687, 73.4024 )
+extents = Vector2( 112.484, 4.40189 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 111.32, 206.123 )
@@ -22,8 +22,8 @@ extents = Vector2( 111.32, 206.123 )
 size = 36
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 36
+[sub_resource type="DynamicFont" id=10]
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="RectangleShape2D" id=6]
@@ -33,25 +33,24 @@ extents = Vector2( 98.8263, 579.689 )
 extents = Vector2( 380.18, 94.1638 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 129.191, 201.894 )
+extents = Vector2( 198.169, 198.491 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 222.424, 240.034 )
+extents = Vector2( 203.559, 224.837 )
 
 [node name="enemic_1" type="Node2D"]
 
 [node name="enemic_1" type="KinematicBody2D" parent="."]
-visible = false
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="enemic_1"]
-position = Vector2( 578.044, 296.289 )
+position = Vector2( 578.044, 272.289 )
 scale = Vector2( 2.62868, 2.25283 )
 frames = SubResource( 1 )
 animation = "caminant"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemic_1"]
-position = Vector2( 576.658, 298.856 )
+position = Vector2( 592.532, -647.235 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="enemic_1"]
@@ -77,12 +76,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="vida" type="Label" parent="enemic_1"]
-margin_left = 617.021
-margin_top = 38.3464
-margin_right = 958.021
-margin_bottom = 168.347
-custom_fonts/font = SubResource( 5 )
+[node name="Label2" type="Label" parent="enemic_1"]
+margin_left = 450.329
+margin_top = -50.874
+margin_right = 712.329
+margin_bottom = 26.126
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.803922, 0.796078, 0.00392157, 1 )
+text = "Sóc inmortal! "
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -90,25 +91,25 @@ __meta__ = {
 [node name="radar" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="radar"]
-position = Vector2( -115.865, 272.048 )
+position = Vector2( -115.865, 250.048 )
 rotation = 1.56706
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="radar"]
-position = Vector2( 1081.55, 269.051 )
+position = Vector2( 1081.55, 254.051 )
 shape = SubResource( 7 )
 
 [node name="rebot_esquerra" type="Area2D" parent="."]
 position = Vector2( 0, 4.23785 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rebot_esquerra"]
-position = Vector2( -991.659, 110.185 )
+position = Vector2( -937.687, -623.194 )
 shape = SubResource( 8 )
 
 [node name="rebot_dret" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rebot_dret"]
-position = Vector2( 1733.28, 16.9516 )
+position = Vector2( 1730.11, -525.939 )
 shape = SubResource( 9 )
 [connection signal="body_entered" from="enemic_1/Area2D" to="enemic_1" method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="enemic_1/timer_movent" to="enemic_1" method="_on_timer_movent_timeout"]

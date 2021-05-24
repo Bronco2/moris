@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sc_pantalla_inici.gd" type="Script" id=1]
 [ext_resource path="res://lletres/Scratch Boys.ttf" type="DynamicFontData" id=2]
@@ -43,6 +43,10 @@ bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="DynamicFont" id=13]
 size = 66
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 75
 font_data = ExtResource( 2 )
 
 [node name="pantalla_inici" type="Node2D"]
@@ -109,6 +113,18 @@ custom_colors/font_color = Color( 0.0509804, 0.494118, 0.164706, 1 )
 custom_colors/font_color_hover = Color( 0.113725, 0.717647, 0.619608, 1 )
 custom_colors/font_color_pressed = Color( 0.113725, 0.717647, 0.619608, 1 )
 text = "HISTÒRIA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 24.6942
+margin_top = 76.3274
+margin_right = 992.694
+margin_bottom = 179.327
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.803922, 0.796078, 0.00392157, 1 )
+text = "Les aventures del professor Moris"
 __meta__ = {
 "_edit_use_anchors_": false
 }

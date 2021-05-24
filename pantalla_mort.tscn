@@ -52,7 +52,7 @@ margin_top = 49.4975
 margin_right = 849.321
 margin_bottom = 168.497
 custom_fonts/font = SubResource( 2 )
-text = "YOU DIED!"
+text = "HAS MORT!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
