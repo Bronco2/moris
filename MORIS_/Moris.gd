@@ -18,6 +18,7 @@ var saltant = false
 var tipus_atac = 0
 var contador = 0
 var sesta_ofagant = false
+var recupera_mana = true
 var animacio = ""
 var mana:int = 500 setget perd_mana
 var vida:int = 500 setget perd_vida 
@@ -51,10 +52,12 @@ func _process(delta):
 		velocitat.y += gravetat
 		velocitat = move_and_slide(velocitat, Vector2.UP)
 		#atacs:(activar i desactivar area)
-		if Input.is_action_just_pressed("atac1") and curant == false:
-			atacant = true
-			tipus_atac = 1
-			$area_atac/colision_atac.disabled = false
+		if mana >= 10:
+			if Input.is_action_just_pressed("atac1") and curant == false:
+				atacant = true
+				tipus_atac = 1
+				self.mana -= 10
+				$area_atac/colision_atac.disabled = false
 		if mana >= 30:
 			if Input.is_action_just_pressed("atac2") and curant == false:
 				atacant = true
@@ -72,6 +75,11 @@ func _process(delta):
 				else:
 					self.mana -= 30
 					self.vida += 30
+		if mana <=495:
+			if recupera_mana:
+				self.mana += 5
+				recupera_mana = false
+				$mana.start()
 	#variables de false i true
 		if atacant:
 			curant = false
@@ -142,13 +150,11 @@ func perd_mana(nou_mana):
 	
 	
 func entraaaigua():
-	print("soc a dins")
 	gravetat = gravetat_normal/3
 	no_esta_aigua = false
 	salt = salt_normal/1.3
 
 func surtdaigua():
-	print("soc a fora")
 	gravetat = gravetat_normal
 	no_esta_aigua = true
 	salt = salt_normal
@@ -173,11 +179,6 @@ func _on_area_atac_body_entered(body):
 	if body.has_method("enemic"):
 		if tipus_atac == 1:
 			body.vida -= 30
-			if mana <= 470:
-				self.mana += 30
-			else:
-				while mana < 500:
-					self.mana += 10
 		if tipus_atac == 2:
 			body.vida -= 50
 
@@ -197,3 +198,6 @@ func _on_AnimatedSprite_animation_finished():
 		$area_atac/colision_atac.disabled = true
 	if  $AnimatedSprite.animation == "cura":
 		curant = false
+
+func _on_mana_timeout():
+	recupera_mana = true

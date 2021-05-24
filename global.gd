@@ -5,7 +5,7 @@ var bales
 var Escut = false
 
 func _ready():
-	pass 
+	pass
 
 
 func _process(delta):
