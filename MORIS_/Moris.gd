@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+#canviar mana progressiu
 
 var velocitat = Vector2(0,0)
 var velocitat_max = 900
@@ -9,8 +9,9 @@ var gravetat_normal = 100
 var no_esta_aigua = true
 var salt = 3000
 var salt_normal = 3000
-var atacant = false
 var mort = false
+
+var atacant = false
 var curant = false
 var caminant = false
 var saltant = false
@@ -19,8 +20,7 @@ var contador = 0
 var sesta_ofagant = false
 var animacio = ""
 var mana:int = 500 setget perd_mana
-var vida:int = 500 setget perd_vida
-
+var vida:int = 500 setget perd_vida 
 signal canvi_vida(nova_vida)
 signal canvi_mana(nou_mana)
 signal oxigen(no_esta_aigua, contador)

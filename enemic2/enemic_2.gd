@@ -13,8 +13,8 @@ func _ready():
 func _process(delta):
 	if visible == true:
 		if pot_disparar == true:
-			$timer_bala.start()
 			dispara()
+			$timer_bala.start()
 	$vida.text = str(vida)
 	mort()
 

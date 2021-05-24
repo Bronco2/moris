@@ -35,30 +35,30 @@ shader = SubResource( 1 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "iddle",
-"speed": 3.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "saltant",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 1 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "run",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "cura",
+"name": "iddle",
 "speed": 3.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "atac1",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "cura",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 1 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "run",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -94,8 +94,7 @@ material = SubResource( 2 )
 position = Vector2( -68.3091, 204.725 )
 scale = Vector2( 0.303713, 0.303713 )
 frames = SubResource( 3 )
-animation = "atac1"
-frame = 4
+animation = "iddle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Moris"]
 position = Vector2( 65.2829, 293.865 )
@@ -188,13 +187,12 @@ __meta__ = {
 visible = false
 modulate = Color( 0.803922, 0.796078, 0.00392157, 1 )
 self_modulate = Color( 0.0509804, 0.494118, 0.164706, 1 )
-position = Vector2( 465.505, 146.835 )
-scale = Vector2( 0.714763, 0.702363 )
+position = Vector2( 1613.2, 116.336 )
+scale = Vector2( 2.74862, 2.70094 )
 texture = ExtResource( 27 )
 script = ExtResource( 26 )
 
 [node name="totes_les_bombolles" parent="CanvasLayer" instance=ExtResource( 10 )]
-visible = true
 position = Vector2( 57.3472, 143.534 )
 scale = Vector2( 0.5, 0.5 )
 
