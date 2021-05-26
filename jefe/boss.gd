@@ -20,6 +20,7 @@ var attacking = false
 var alive = true
 var dmg: int
 var esta = false
+var esta2 = false
 
 func _ready():
 	$Timer.wait_time = 2
@@ -31,35 +32,38 @@ func _physics_process(delta):
 	if attacking == false:
 		att = NONE
 	$attack/CollisionShape2D.disabled = false
+	$attack2/bite.disabled = false
 	if alive:
 		anima()
 		if target:
 			$Label.text = str(vida)
-			$Label2.text = ''
+#			$Label2.text = ''
 			if close or attacking:
 				velocity.x = 0
+				
 			elif target.global_position.x > global_position.x - RNG:
-				$AnimatedSprite.flip_h = false
 				velocity = SPEED * Vector2.RIGHT * delta
+				
 			elif target.global_position.x < global_position.x + RNG:
 				velocity = SPEED * Vector2.LEFT * delta
-				$AnimatedSprite.flip_h = true
 			
+			if velocity.x > 0:
+				$AnimatedSprite.flip_h = false
+			elif velocity.x < 0:
+				$AnimatedSprite.flip_h = true
+			else:
+				pass
+			
+			if ($AnimatedSprite.flip_h == true):
+				$hitbox.disabled = true
+				$hitbox2.disabled = false
+			else:
+				$hitbox.disabled = false
+				$hitbox2.disabled = true
+				
 			velocity.y += GRAVITY
 			velocity = move_and_slide(velocity)
-#		match att:
-#			FAST:
-#				$AnimatedSprite.play('att1')
-#				dmg = STRENGTH
-#				attacking = true
-#
-#			STRONG:
-#				$AnimatedSprite.play('att2')
-#				dmg = 2*STRENGTH
-#				attacking = true
-#
-#			NONE:
-#				attacking = false
+
 	else:
 		$Timer.stop()
 		die()
@@ -88,8 +92,12 @@ func attack():
 
 		NONE:
 			attacking = false
-	if attacking and esta:
+			
+	if att == FAST and esta:
 		$attack/CollisionShape2D.disabled = false
+		target.vida -= dmg
+	elif att == STRONG and esta2:
+		$attack2/bite.disabled = false
 		target.vida -= dmg
 	else:
 		pass
@@ -105,6 +113,9 @@ func anima():
 			$AnimatedSprite.play('default')
 		else:
 			$AnimatedSprite.play('run')
+
+
+
 
 func _on_Timer_timeout():
 	$Timer.wait_time = choose([1, 1.5, 2])
@@ -144,3 +155,11 @@ func _on_range_body_exited(body):
 func _on_attack_body_exited(body):
 	if body.has_method('personatge'):
 		esta = false
+
+func _on_attack2_body_entered(body):
+	if body.has_method('personatge'):
+		esta2 = true
+
+func _on_attack2_body_exited(body):
+	if body.has_method('personatge'):
+		esta2 = false
