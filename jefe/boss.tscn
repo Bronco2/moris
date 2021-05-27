@@ -290,8 +290,11 @@ extents = Vector2( 647.468, 1642.74 )
 position = Vector2( 5.00124, 2.916 )
 
 [node name="boss" type="KinematicBody2D" parent="."]
-position = Vector2( 0.280933, 0.374578 )
+position = Vector2( -1304.98, 42.753 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="boss"]
 margin_left = 469.0
@@ -304,9 +307,9 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="boss"]
-position = Vector2( 7.32996, 1286.76 )
+position = Vector2( 1312.59, 1329.14 )
 frames = SubResource( 2 )
-animation = "att2"
+animation = "iddle"
 frame = 6
 playing = true
 
@@ -317,18 +320,15 @@ scale = Vector2( 0.725074, 0.710881 )
 frames = SubResource( 47 )
 
 [node name="hitbox" type="CollisionShape2D" parent="boss"]
-visible = false
 position = Vector2( 868.396, 1649.17 )
 shape = SubResource( 48 )
 
 [node name="hitbox2" type="CollisionShape2D" parent="boss"]
-visible = false
 position = Vector2( 1735.18, 1648.53 )
 shape = SubResource( 48 )
 disabled = true
 
 [node name="attack" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1698.06, 1525.77 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/attack"]
@@ -337,7 +337,6 @@ shape = SubResource( 49 )
 disabled = true
 
 [node name="attack2" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1945.77, 2581.81 )
 rotation = 1.57053
 
@@ -356,7 +355,6 @@ position = Vector2( -2434.74, 1507.15 )
 shape = SubResource( 51 )
 
 [node name="range" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1704.76, 484.664 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/range"]
