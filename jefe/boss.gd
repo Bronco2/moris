@@ -3,100 +3,125 @@ extends KinematicBody2D
 enum{
 	FAST
 	STRONG
-	RANGED
 	NONE
 }
-const SPEED = 500
+const SPEED = 50000
 const JUMP_POWER = -300
-const GRAVITY = 100
+const GRAVITY = 500
 const STRENGTH = 75
-var vida = 10000
+
+var vida = 500
 var velocity = Vector2()
 const RNG = 0
+var close = false
 var target:KinematicBody2D 
 var att = NONE
 var attacking = false
 var alive = true
 var dmg: int
+var esta = false
+var esta2 = false
 
 func _ready():
 	$Timer.wait_time = 2
+	$Timer.start()
 	randomize()
 	pass
 
-
-
 func _physics_process(delta):
+	if attacking == false:
+		att = NONE
+	$attack/CollisionShape2D.disabled = false
+	$attack2/bite.disabled = false
 	if alive:
+		anima()
 		if target:
-			if abs(target.position.x - position.x) < 50:
+			$Label.text = str(vida)
+#			$Label2.text = ''
+			if close or attacking:
 				velocity.x = 0
-			elif target.position.x < position.x:
-				velocity = SPEED * Vector2.RIGHT
-			elif target.position.x > position.x:
-				velocity = SPEED * Vector2.LEFT
+				
+			elif target.global_position.x > global_position.x - RNG:
+				velocity = SPEED * Vector2.RIGHT * delta
+				
+			elif target.global_position.x < global_position.x + RNG:
+				velocity = SPEED * Vector2.LEFT * delta
 			
+			if velocity.x > 0:
+				$AnimatedSprite.flip_h = false
+			elif velocity.x < 0:
+				$AnimatedSprite.flip_h = true
+			else:
+				pass
+			
+			if ($AnimatedSprite.flip_h == true):
+				$hitbox.disabled = true
+				$hitbox2.disabled = false
+			else:
+				$hitbox.disabled = false
+				$hitbox2.disabled = true
+				
 			velocity.y += GRAVITY
 			velocity = move_and_slide(velocity)
-	
+
 	else:
 		$Timer.stop()
 		die()
-
-
-
-
-
-
 
 func choose(array):
 	array.shuffle()
 	return array.front()
 
-
-#func move():
-#	if target.position.x <= (position.x - rng):
-#		velocity.x = SPEED * Vector2.LEFT
-#	elif target.position.x > (position.x + rng):
-#		velocity.x = SPEED * Vector2.RIGHT
-#	velocity.y += GRAVITY
-#	return velocity
-
-
 func die():
 	attacking = false
 	att = NONE
 	$AnimatedSprite.play('death')
-	
 
+func enemic():
+	pass
 
 func attack():
 	match att:
 		FAST:
-			$AnimatedSprite.play('att1')
 			dmg = STRENGTH
 			attacking = true
-			
+
 		STRONG:
-			$AnimatedSprite.play('att2')
 			dmg = 2*STRENGTH
 			attacking = true
-			
-		RANGED:
-			$AnimatedSprite.play('att3')
-			pass
+
 		NONE:
 			attacking = false
-	
+			
+	if att == FAST and esta:
+		$attack/CollisionShape2D.disabled = false
+		target.vida -= dmg
+	elif att == STRONG and esta2:
+		$attack2/bite.disabled = false
+		target.vida -= dmg
+	else:
+		pass
+
+func anima():
+	if attacking == true:
+		if att == FAST:
+			$AnimatedSprite.play('att1')
+		elif att == STRONG:
+			$AnimatedSprite.play('att2')
+	else:
+		if velocity.x == 0:
+			$AnimatedSprite.play('default')
+		else:
+			$AnimatedSprite.play('run')
+
 
 
 
 func _on_Timer_timeout():
 	$Timer.wait_time = choose([1, 1.5, 2])
-	att = choose([FAST, STRONG, RANGED])
+	$Timer.start()
+	att = choose([FAST, FAST, FAST, STRONG, STRONG])
 	attack()
-
-
 
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'death':
@@ -111,20 +136,30 @@ func _on_AnimatedSprite_animation_finished():
 		attacking = false
 		att = NONE
 
-
 func _on_attack_body_entered(body):
-	if attacking:
-		if body.has_method('personatge'):
-			body.vida -= dmg 
+	if body.has_method('personatge'):
+		esta = true
 
-#
-#func _on_SIGHT_body_entered(body):
-#	if body.has_method('personatge'):
-#			target = body 
-
-#
-#
 func _on_SIGHT2_body_entered(body):
 	if body.has_method('personatge'):
-		print('ara si')
 		target = body 
+
+func _on_range_body_entered(body):
+	if body.has_method('personatge'):
+		close = true
+
+func _on_range_body_exited(body):
+	if body.has_method('personatge'):
+		close = false
+
+func _on_attack_body_exited(body):
+	if body.has_method('personatge'):
+		esta = false
+
+func _on_attack2_body_entered(body):
+	if body.has_method('personatge'):
+		esta2 = true
+
+func _on_attack2_body_exited(body):
+	if body.has_method('personatge'):
+		esta2 = false
