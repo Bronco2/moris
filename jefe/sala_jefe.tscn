@@ -101,7 +101,7 @@ __meta__ = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 3858.89, 3186.78 )
+position = Vector2( -2077.63, 484.904 )
 scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_group_": true
@@ -135,7 +135,6 @@ scale = Vector2( 3.99411, 10.2385 )
 texture = ExtResource( 3 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -19.0273, 342.491 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -161,7 +160,7 @@ texture = ExtResource( 3 )
 flip_v = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -8864.28, 2220.51 )
+position = Vector2( -2083.29, 484.904 )
 scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_group_": true
