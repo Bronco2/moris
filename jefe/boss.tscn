@@ -1,8 +1,7 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
 
 [ext_resource path="res://jefe/boss.gd" type="Script" id=1]
 [ext_resource path="res://jefe/New Piskel.png" type="Texture" id=2]
-[ext_resource path="res://jefe/GlobalBoss.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -197,41 +196,71 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 3.967, 5.67367 )
+extents = Vector2( 3.65874, 5.67367 )
 
-[sub_resource type="RectangleShape2D" id=44]
+[sub_resource type="RectangleShape2D" id=45]
 extents = Vector2( 7.75531, 7.56783 )
 
-[sub_resource type="CircleShape2D" id=45]
+[sub_resource type="CapsuleShape2D" id=44]
+radius = 4.44693
+height = 7.49751
+
+[sub_resource type="CircleShape2D" id=46]
 radius = 613.508
 
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 6.15085, 11.4039 )
+
 [node name="Boss" type="Node2D"]
-script = ExtResource( 3 )
+position = Vector2( 5.00124, 2.916 )
 
 [node name="boss" type="KinematicBody2D" parent="."]
+position = Vector2( 0.280933, 0.374578 )
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="boss"]
-position = Vector2( 2.67268, 0.00872326 )
+position = Vector2( -0.468376, 6.22672 )
 scale = Vector2( 0.725074, 0.710881 )
 frames = SubResource( 42 )
 
 [node name="hitbox" type="CollisionShape2D" parent="boss"]
+position = Vector2( -3.392, 6.312 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 43 )
 
+[node name="hitbox2" type="CollisionShape2D" parent="boss"]
+position = Vector2( 2.44172, 6.25944 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 43 )
+disabled = true
+
 [node name="attack" type="Area2D" parent="boss"]
-position = Vector2( 0, 0.222725 )
+visible = false
+position = Vector2( -3.11097, 6.53437 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/attack"]
-position = Vector2( 3.78831, -1.89416 )
-shape = SubResource( 44 )
+position = Vector2( 3.60102, -2.08145 )
+shape = SubResource( 45 )
 disabled = true
 
-[node name="Timer" type="Timer" parent="boss"]
-autostart = true
+[node name="attack2" type="Area2D" parent="boss"]
+visible = false
+position = Vector2( 1.122, 7.529 )
+rotation = 1.57053
+scale = Vector2( 1, 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bite" type="CollisionShape2D" parent="boss/attack2"]
+shape = SubResource( 44 )
+disabled = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="SIGHT2" type="Area2D" parent="boss"]
 visible = false
@@ -241,18 +270,33 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/SIGHT2"]
-shape = SubResource( 45 )
+shape = SubResource( 46 )
 
-[node name="SIGHT" type="Area2D" parent="."]
+[node name="range" type="Area2D" parent="boss"]
 visible = false
-collision_mask = 5
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -14.5149, -1.21738 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SIGHT"]
-shape = SubResource( 45 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/range"]
+position = Vector2( 14.1085, 1.92156 )
+shape = SubResource( 47 )
+
+[node name="Timer" type="Timer" parent="boss"]
+autostart = true
+
+[node name="Label" type="Label" parent="boss"]
+margin_left = -20.9233
+margin_top = -25.1164
+margin_right = 8.07671
+margin_bottom = -11.1164
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="boss/AnimatedSprite" to="boss" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="boss/attack" to="boss" method="_on_attack_body_entered"]
+[connection signal="body_exited" from="boss/attack" to="boss" method="_on_attack_body_exited"]
+[connection signal="body_entered" from="boss/attack2" to="boss" method="_on_attack2_body_entered"]
+[connection signal="body_exited" from="boss/attack2" to="boss" method="_on_attack2_body_exited"]
 [connection signal="body_entered" from="boss/SIGHT2" to="boss" method="_on_SIGHT2_body_entered"]
-[connection signal="body_entered" from="SIGHT" to="." method="_on_SIGHT_body_entered"]
+[connection signal="body_entered" from="boss/range" to="boss" method="_on_range_body_entered"]
+[connection signal="body_exited" from="boss/range" to="boss" method="_on_range_body_exited"]
+[connection signal="timeout" from="boss/Timer" to="boss" method="_on_Timer_timeout"]

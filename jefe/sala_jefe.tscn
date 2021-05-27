@@ -7,10 +7,11 @@
 extents = Vector2( 3730.38, 64.0992 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 3652.12, 971.763 )
 
 [node name="Boss" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1415.13, -114.13 )
-scale = Vector2( 50, 50 )
+position = Vector2( -2531.01, -523.52 )
+scale = Vector2( 60, 60 )
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1415.78, -670.276 )
