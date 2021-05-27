@@ -42,9 +42,6 @@ __meta__ = {
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( -6088.74, 1293.86 )
 rotation = 1.5708
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Collision" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( -2345.29, -1107.48 )
@@ -104,7 +101,7 @@ __meta__ = {
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -2077.63, 484.904 )
+position = Vector2( 3858.89, 3186.78 )
 scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_group_": true
@@ -138,6 +135,7 @@ scale = Vector2( 3.99411, 10.2385 )
 texture = ExtResource( 3 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -19.0273, 342.491 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -163,7 +161,7 @@ texture = ExtResource( 3 )
 flip_v = true
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -2083.29, 484.904 )
+position = Vector2( -8864.28, 2220.51 )
 scale = Vector2( 0.6, 0.6 )
 __meta__ = {
 "_edit_group_": true

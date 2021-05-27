@@ -77,7 +77,6 @@ func die():
 	attacking = false
 	att = NONE
 	$AnimatedSprite.play('death')
-	$Label.text = 'KO'
 
 func enemic():
 	pass
