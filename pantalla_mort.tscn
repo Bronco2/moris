@@ -81,4 +81,25 @@ text = "TORNA A JUGAR"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="pira" type="Button" parent="."]
+margin_left = 23.4802
+margin_top = 434.52
+margin_right = 370.48
+margin_bottom = 566.52
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.933333, 0.054902, 0.054902, 1 )
+custom_colors/font_color_pressed = Color( 0.933333, 0.054902, 0.054902, 1 )
+text = "NO VULL JUGAR MÉS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="torna a jugar" to="." method="_on_torna_a_jugar_pressed"]
+[connection signal="pressed" from="pira" to="." method="_on_pira_pressed"]

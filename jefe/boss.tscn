@@ -198,10 +198,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=43]
 extents = Vector2( 3.65874, 5.67367 )
 
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=44]
 extents = Vector2( 7.75531, 7.56783 )
 
-[sub_resource type="CapsuleShape2D" id=44]
+[sub_resource type="CapsuleShape2D" id=45]
 radius = 4.44693
 height = 7.49751
 
@@ -225,12 +225,10 @@ frames = SubResource( 42 )
 
 [node name="hitbox" type="CollisionShape2D" parent="boss"]
 position = Vector2( -3.392, 6.312 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 43 )
 
 [node name="hitbox2" type="CollisionShape2D" parent="boss"]
 position = Vector2( 2.44172, 6.25944 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 43 )
 disabled = true
 
@@ -243,20 +241,19 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/attack"]
 position = Vector2( 3.60102, -2.08145 )
-shape = SubResource( 45 )
+shape = SubResource( 44 )
 disabled = true
 
 [node name="attack2" type="Area2D" parent="boss"]
 visible = false
 position = Vector2( 1.122, 7.529 )
 rotation = 1.57053
-scale = Vector2( 1, 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="bite" type="CollisionShape2D" parent="boss/attack2"]
-shape = SubResource( 44 )
+shape = SubResource( 45 )
 disabled = true
 __meta__ = {
 "_edit_group_": true
@@ -284,13 +281,14 @@ shape = SubResource( 47 )
 autostart = true
 
 [node name="Label" type="Label" parent="boss"]
-margin_left = -20.9233
-margin_top = -25.1164
-margin_right = 8.07671
-margin_bottom = -11.1164
+margin_left = 8.0
+margin_top = -2.0
+margin_right = 19.0
+margin_bottom = 12.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="animation_finished" from="boss/AnimatedSprite" to="boss" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="boss/attack" to="boss" method="_on_attack_body_entered"]
 [connection signal="body_exited" from="boss/attack" to="boss" method="_on_attack_body_exited"]

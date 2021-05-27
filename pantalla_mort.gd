@@ -18,3 +18,7 @@ func _ready():
 
 func _on_torna_a_jugar_pressed():
 	get_tree().change_scene("res://pantalla_inici.tscn")
+
+
+func _on_pira_pressed():
+	get_tree().quit()
