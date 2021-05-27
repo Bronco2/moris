@@ -7,12 +7,12 @@ enum{
 }
 const SPEED = 50000
 const JUMP_POWER = -300
-const GRAVITY = 500
+const GRAVITY = 50
 const STRENGTH = 75
-
-var vida = 500
-var velocity = Vector2()
 const RNG = 0
+
+var vida = 600
+var velocity = Vector2()
 var close = false
 var target:KinematicBody2D 
 var att = NONE
@@ -29,6 +29,8 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if vida <= 0:
+		alive = false
 	if attacking == false:
 		att = NONE
 	$attack/CollisionShape2D.disabled = false
@@ -36,8 +38,7 @@ func _physics_process(delta):
 	if alive:
 		anima()
 		if target:
-			$Label.text = str(vida)
-#			$Label2.text = ''
+			
 			if close or attacking:
 				velocity.x = 0
 				
@@ -63,7 +64,7 @@ func _physics_process(delta):
 				
 			velocity.y += GRAVITY
 			velocity = move_and_slide(velocity)
-
+			
 	else:
 		$Timer.stop()
 		die()
@@ -76,6 +77,7 @@ func die():
 	attacking = false
 	att = NONE
 	$AnimatedSprite.play('death')
+	$Label.text = 'KO'
 
 func enemic():
 	pass
@@ -110,15 +112,13 @@ func anima():
 			$AnimatedSprite.play('att2')
 	else:
 		if velocity.x == 0:
-			$AnimatedSprite.play('default')
+			$AnimatedSprite.play('iddle')
 		else:
 			$AnimatedSprite.play('run')
 
 
-
-
 func _on_Timer_timeout():
-	$Timer.wait_time = choose([1, 1.5, 2])
+	$Timer.wait_time = choose([1.5, 2, 2, 2.5])
 	$Timer.start()
 	att = choose([FAST, FAST, FAST, STRONG, STRONG])
 	attack()
@@ -126,6 +126,8 @@ func _on_Timer_timeout():
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == 'death':
 		queue_free()
+		get_tree().change_scene("res://WIN.tscn")
+		
 	elif $AnimatedSprite.animation == 'att1':
 		attacking = false
 		att = NONE

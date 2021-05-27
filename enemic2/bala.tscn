@@ -1,19 +1,32 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://fotos/klipartz.com.png" type="Texture" id=1]
+[ext_resource path="res://enemic2/bola1.png" type="Texture" id=1]
 [ext_resource path="res://enemic2/bala.gd" type="Script" id=2]
+[ext_resource path="res://enemic2/bola2.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 42.8663, 256.193 )
+extents = Vector2( 92.2253, 88.5904 )
 
-[node name="bala" type="Sprite"]
+[node name="bala" type="AnimatedSprite"]
+position = Vector2( -1.56629e-09, 1.68179 )
 rotation = -1.56518
 scale = Vector2( 0.304521, 0.428863 )
-texture = ExtResource( 1 )
+frames = SubResource( 2 )
+frame = 1
+playing = true
 script = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -1.90869, 5.55357 )
 shape = SubResource( 1 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

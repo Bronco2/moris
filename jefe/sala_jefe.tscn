@@ -1,32 +1,197 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://jefe/boss.tscn" type="PackedScene" id=1]
-[ext_resource path="res://MORIS_/Moris.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemic1/MORIS_/Moris.tscn" type="PackedScene" id=2]
+[ext_resource path="res://jefe/CCI27021.jpg" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3730.38, 64.0992 )
+extents = Vector2( 7778.67, 120.862 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 3652.12, 971.763 )
 
-[node name="Boss" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2531.01, -523.52 )
-scale = Vector2( 60, 60 )
-
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1415.78, -670.276 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 101.022, 417.556 )
+position = Vector2( 527.834, 376.651 )
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
-margin_left = -3579.87
-margin_top = 361.746
-margin_right = 3806.13
-margin_bottom = 461.746
+margin_left = -6984.0
+margin_top = 230.0
+margin_right = 8215.0
+margin_bottom = 2920.0
+color = Color( 0.886275, 0.752941, 0.619608, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+margin_left = -7559.0
+margin_top = 566.0
+margin_right = 8846.0
+margin_bottom = 3034.0
+color = Color( 0.74902, 0.592157, 0.513726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( -6088.74, 1293.86 )
+rotation = 1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -2345.29, -1107.48 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+margin_left = -7841.0
+margin_top = -1230.0
+margin_right = -726.0
+margin_bottom = 396.0
+color = Color( 0.886275, 0.752941, 0.619608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="StaticBody2D2"]
+margin_left = -8423.86
+margin_top = -849.74
+margin_right = 7981.14
+margin_bottom = 1618.26
+color = Color( 0.74902, 0.592157, 0.513726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 7479.93, -3836.35 )
+rotation = -1.5708
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( -2345.29, -1107.48 )
+shape = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+margin_left = -4400.0
+margin_top = -1230.0
+margin_right = 2544.0
+margin_bottom = 468.0
+color = Color( 0.886275, 0.752941, 0.619608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect4" type="ColorRect" parent="StaticBody2D3"]
+margin_left = -8735.07
+margin_top = -881.68
+margin_right = 7669.93
+margin_bottom = 1586.32
+color = Color( 0.74902, 0.592157, 0.513726, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -2077.63, 484.904 )
+scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 7061.24, -5665.21 )
+rotation = 1.5708
+scale = Vector2( 3.99411, 10.2385 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 7430.83, -4994.92 )
+rotation = 1.5708
+scale = Vector2( 3.99411, 10.2385 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 6960.46, -4255.77 )
+rotation = 1.5708
+scale = Vector2( 3.99411, 10.2385 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( 7027.65, -3550.21 )
+rotation = 1.5708
+scale = Vector2( 3.99411, 10.2385 )
+texture = ExtResource( 3 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 4370.42, -229.192 )
+rotation = 1.5708
+scale = Vector2( 1.31478, 1.31478 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 126.067, -228.737 )
+rotation = 1.5708
+scale = Vector2( 1.31479, 1.31479 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 8617.54, -228.437 )
+rotation = 1.5708
+scale = Vector2( 1.31478, 1.31478 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -2083.29, 484.904 )
+scale = Vector2( 0.6, 0.6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 4370.42, -229.192 )
+rotation = 1.5708
+scale = Vector2( 1.31478, 1.31478 )
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 126.067, -228.737 )
+rotation = 1.5708
+scale = Vector2( 1.31479, 1.31479 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 8617.54, -228.437 )
+rotation = 1.5708
+scale = Vector2( 1.31478, 1.31478 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1367.83, -1005.9 )
+
+[node name="Boss" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3457.97, -2147.17 )
+scale = Vector2( 0.5, 0.5 )

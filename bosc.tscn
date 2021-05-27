@@ -2,7 +2,8 @@
 
 [ext_resource path="res://WhatsApp Image 2021-04-20 at 10.24.15.jpeg" type="Texture" id=1]
 [ext_resource path="res://WhatsApp Image 2021-04-20 at 10.31.02.jpeg" type="Texture" id=2]
-[ext_resource path="res://MORIS_/Moris.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemic1/MORIS_/Moris.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
