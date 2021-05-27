@@ -1,4 +1,4 @@
-extends Sprite
+extends AnimatedSprite
 
 var direccio = Vector2.RIGHT
 var velocitat = 300
@@ -6,6 +6,7 @@ var velocitat = 300
 
 
 func _ready():
+	play('default')
 	pass # Replace with function body.
 
 

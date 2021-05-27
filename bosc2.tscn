@@ -12,7 +12,7 @@
 [ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(10).jpeg" type="Texture" id=10]
 [ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(1).jpeg" type="Texture" id=11]
 [ext_resource path="res://WhatsApp Image 2021-05-04 at 10.25.47(9).jpeg" type="Texture" id=12]
-[ext_resource path="res://MORIS_/Moris.tscn" type="PackedScene" id=13]
+[ext_resource path="res://enemic1/MORIS_/Moris.tscn" type="PackedScene" id=13]
 [ext_resource path="res://areaaigua.gd" type="Script" id=14]
 [ext_resource path="res://WhatsApp Image 2021-04-20 at 10.31.02.jpeg" type="Texture" id=15]
 [ext_resource path="res://enemic1/enemic_1.tscn" type="PackedScene" id=16]
@@ -400,14 +400,26 @@ position = Vector2( 265.021, -1274.41 )
 [node name="enemic_1" parent="." instance=ExtResource( 16 )]
 position = Vector2( 5316.9, -1601.01 )
 
+[node name="enemic_4" parent="." instance=ExtResource( 16 )]
+position = Vector2( 30158.9, 4941.72 )
+
 [node name="enemic_2" parent="." instance=ExtResource( 17 )]
 position = Vector2( 5457.94, 1017.33 )
 
+[node name="enemic_6" parent="." instance=ExtResource( 17 )]
+position = Vector2( 34212.1, 2225.49 )
+
+[node name="enemic_3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 20207.4, -1638.64 )
+
+[node name="enemic_5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 15163.4, 5066.64 )
+
 [node name="escut" parent="." instance=ExtResource( 18 )]
-position = Vector2( 29287, 2834.49 )
+position = Vector2( 29564.6, 2642.27 )
 
 [node name="porta" parent="." instance=ExtResource( 19 )]
-position = Vector2( 43929.9, 2602.41 )
+position = Vector2( 43869.9, 2494.15 )
 [connection signal="body_entered" from="Area2D" to="moris" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="moris" method="_on_Area2D_body_exited"]
 
