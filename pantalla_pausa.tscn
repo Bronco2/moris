@@ -110,5 +110,6 @@ text = "Continua"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Panel/Torna_al_menu" to="." method="_on_Torna_al_menu_pressed"]
 [connection signal="pressed" from="Panel/Continua" to="." method="_on_Continua_pressed"]

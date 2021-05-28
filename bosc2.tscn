@@ -420,6 +420,7 @@ position = Vector2( 29564.6, 2642.27 )
 
 [node name="porta" parent="." instance=ExtResource( 19 )]
 position = Vector2( 43869.9, 2494.15 )
+
 [connection signal="body_entered" from="Area2D" to="moris" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Area2D" to="moris" method="_on_Area2D_body_exited"]
 

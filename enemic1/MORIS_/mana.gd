@@ -11,7 +11,7 @@ func _ready():
 func _on_Moris_canvi_mana(nou_mana):
 	var mana = value
 	if not pendent_mana:
-		$Tween.interpolate_property(self, "value", mana, nou_mana, 1)
+		$Tween.interpolate_property(self, "value", mana, nou_mana, 0.5)
 		$Tween.start()
 		pendent_mana = true
 		$text_mana.text = str(nou_mana)

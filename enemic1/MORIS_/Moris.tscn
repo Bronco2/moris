@@ -50,15 +50,25 @@ shader = SubResource( 1 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 28 ) ],
+"loop": true,
+"name": "saltant",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 20 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "atac1__",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
-"name": "cura__",
-"speed": 3.0
+"name": "cura",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "saltant__",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 38 ), ExtResource( 40 ), ExtResource( 39 ) ],
 "loop": true,
@@ -70,30 +80,20 @@ animations = [ {
 "name": "run__",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "saltant__",
+"name": "cura__",
+"speed": 3.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 42 ) ],
+"loop": true,
+"name": "run",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "iddle__",
 "speed": 3.0
-}, {
-"frames": [ ExtResource( 29 ) ],
-"loop": true,
-"name": "cura",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ) ],
-"loop": true,
-"name": "saltant",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 41 ), ExtResource( 42 ) ],
-"loop": true,
-"name": "run",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 36 ), ExtResource( 31 ) ],
 "loop": true,
@@ -169,7 +169,6 @@ __meta__ = {
 autostart = true
 
 [node name="mana" type="Timer" parent="Moris"]
-wait_time = 2.0
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -246,6 +245,7 @@ visible = false
 
 [node name="pantalla_pausa" parent="CanvasLayer" instance=ExtResource( 8 )]
 visible = false
+
 [connection signal="canvi_mana" from="Moris" to="CanvasLayer/mana" method="_on_Moris_canvi_mana"]
 [connection signal="canvi_vida" from="Moris" to="CanvasLayer/vida" method="_on_Moris_canvi_vida"]
 [connection signal="oxigen" from="Moris" to="CanvasLayer/totes_les_bombolles" method="_on_Moris_oxigen"]
