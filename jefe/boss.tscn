@@ -38,20 +38,10 @@ animations = [ {
 "name": "New Anim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "att1",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 16 ), ExtResource( 16 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "att2",
 "speed": 8.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "death",
-"speed": 2.5
 }, {
 "frames": [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ) ],
 "loop": true,
@@ -62,6 +52,16 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "death",
+"speed": 2.5
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "att1",
+"speed": 8.0
 } ]
 
 [sub_resource type="AtlasTexture" id=3]
@@ -78,31 +78,31 @@ region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
@@ -110,19 +110,19 @@ region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 2 )
@@ -182,63 +182,63 @@ region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 96, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 96, 32, 32 )
+region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 96, 32, 32 )
+region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 32, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 64, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 32, 32, 32 )
+region = Rect2( 64, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 32, 32 )
+region = Rect2( 32, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 0, 96, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 32, 32 )
+region = Rect2( 64, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 32, 32 )
+region = Rect2( 32, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 32, 32 )
+region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=47]
 animations = [ {
@@ -247,30 +247,30 @@ animations = [ {
 "name": "default",
 "speed": 2.5
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "att1",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 27 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 16 ) ],
 "loop": true,
 "name": "att2",
 "speed": 13.0
 }, {
-"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 38 ), SubResource( 38 ), SubResource( 38 ), SubResource( 38 ), SubResource( 38 ) ],
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ), SubResource( 27 ) ],
 "loop": true,
 "name": "att3",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 41 ), SubResource( 40 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 30 ), SubResource( 29 ), SubResource( 28 ), SubResource( 32 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 34 ) ],
 "loop": true,
 "name": "death",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 44 ), SubResource( 43 ), SubResource( 42 ), SubResource( 46 ) ],
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
 "loop": true,
-"name": "run",
-"speed": 5.0
+"name": "att1",
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=48]
@@ -297,23 +297,27 @@ font_data = ExtResource( 19 )
 position = Vector2( 5.00124, 2.916 )
 
 [node name="boss" type="KinematicBody2D" parent="."]
-position = Vector2( -1304.98, 38.5151 )
+position = Vector2( -25.145, 21.5637 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="boss"]
-margin_left = 469.0
-margin_top = 255.0
-margin_right = 2617.0
-margin_bottom = 631.0
+margin_left = -802.359
+margin_top = 221.097
+margin_right = 1345.64
+margin_bottom = 597.097
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="boss"]
-position = Vector2( 1312.59, 1329.14 )
+position = Vector2( 41.2307, 1295.24 )
 frames = SubResource( 2 )
 animation = "iddle"
+frame = 4
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="boss"]
@@ -323,16 +327,16 @@ scale = Vector2( 0.725074, 0.710881 )
 frames = SubResource( 47 )
 
 [node name="hitbox" type="CollisionShape2D" parent="boss"]
-position = Vector2( 868.396, 1649.17 )
+position = Vector2( -402.963, 1615.27 )
 shape = SubResource( 48 )
 
 [node name="hitbox2" type="CollisionShape2D" parent="boss"]
-position = Vector2( 1735.18, 1648.53 )
+position = Vector2( 463.821, 1614.63 )
 shape = SubResource( 48 )
 disabled = true
 
 [node name="attack" type="Area2D" parent="boss"]
-position = Vector2( 1698.06, 1525.77 )
+position = Vector2( 426.701, 1491.87 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/attack"]
 position = Vector2( -387.507, -231.674 )
@@ -340,7 +344,7 @@ shape = SubResource( 49 )
 disabled = true
 
 [node name="attack2" type="Area2D" parent="boss"]
-position = Vector2( 1945.77, 2581.81 )
+position = Vector2( 674.411, 2547.91 )
 rotation = 1.57053
 
 [node name="bite" type="CollisionShape2D" parent="boss/attack2"]
@@ -358,7 +362,7 @@ position = Vector2( -2434.74, 1507.15 )
 shape = SubResource( 51 )
 
 [node name="range" type="Area2D" parent="boss"]
-position = Vector2( 1704.76, 484.664 )
+position = Vector2( 433.401, 450.761 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/range"]
 position = Vector2( -391.683, 258.211 )
@@ -368,10 +372,10 @@ shape = SubResource( 52 )
 autostart = true
 
 [node name="vida" type="TextureProgress" parent="boss"]
-margin_left = 577.03
-margin_top = 401.141
-margin_right = 1027.03
-margin_bottom = 851.141
+margin_left = -694.329
+margin_top = 367.238
+margin_right = -244.329
+margin_bottom = 817.238
 rect_scale = Vector2( 3, 0.5 )
 max_value = 600.0
 value = 600.0
@@ -397,7 +401,6 @@ text = "600"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="canvi_vida" from="boss" to="boss/vida" method="_on_boss_canvi_vida"]
 [connection signal="animation_finished" from="boss/AnimatedSprite" to="boss" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="boss/attack" to="boss" method="_on_attack_body_entered"]

@@ -8,7 +8,7 @@ enum{
 const SPEED = 50000
 const JUMP_POWER = -300
 const GRAVITY = 50
-const STRENGTH = 75
+const STRENGTH = 80
 const RNG = 0
 
 var vida = 600 setget perd_vida 
@@ -125,7 +125,7 @@ func anima():
 
 
 func _on_Timer_timeout():
-	$Timer.wait_time = choose([1.5, 2, 2, 2.5])
+	$Timer.wait_time = choose([1.5, 1.5, 2, 2, 2, 2.5])
 	$Timer.start()
 	att = choose([FAST, FAST, FAST, STRONG, STRONG])
 	attack()
