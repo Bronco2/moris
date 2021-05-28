@@ -16,9 +16,9 @@ func _ready():
 #	pass
 
 
-func _on_Button_pressed():
-	get_tree().change_scene("res://pantalla_inici.tscn")
-
-
 func _on_surt_pressed():
 	get_tree().quit()
+
+
+func _on_menu_pressed():
+	get_tree().change_scene("res://pantalla_inici.tscn")

@@ -21,10 +21,10 @@ size = 36
 font_data = ExtResource( 4 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 1671.8, 201.525 )
+extents = Vector2( 1249.79, 201.525 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 2034.2, 209.305 )
+extents = Vector2( 1172.17, 209.305 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 775.017, 850.759 )
@@ -62,14 +62,14 @@ __meta__ = {
 position = Vector2( -749.13, -866.803 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="radar_dret"]
-position = Vector2( 2202.29, 21.0508 )
+position = Vector2( 1762.28, 12.0711 )
 shape = SubResource( 4 )
 
 [node name="radar_esq" type="Area2D" parent="."]
 position = Vector2( -749.13, -866.803 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="radar_esq"]
-position = Vector2( -1976.48, 29.7875 )
+position = Vector2( -1114.43, 11.8283 )
 shape = SubResource( 5 )
 
 [node name="bales" type="Node" parent="."]

@@ -11,7 +11,7 @@ const GRAVITY = 50
 const STRENGTH = 75
 const RNG = 0
 
-var vida = 600
+var vida = 600 setget perd_vida 
 var velocity = Vector2()
 var close = false
 var target:KinematicBody2D 
@@ -21,6 +21,8 @@ var alive = true
 var dmg: int
 var esta = false
 var esta2 = false
+
+signal canvi_vida(nova_vida)
 
 func _ready():
 	$Timer.wait_time = 2
@@ -68,6 +70,7 @@ func _physics_process(delta):
 	else:
 		$Timer.stop()
 		die()
+	perd_vida(vida)
 
 func choose(array):
 	array.shuffle()
@@ -77,6 +80,11 @@ func die():
 	attacking = false
 	att = NONE
 	$AnimatedSprite.play('death')
+
+func perd_vida(nova_vida):
+	vida = nova_vida
+	emit_signal("canvi_vida", nova_vida)
+
 
 func enemic():
 	pass

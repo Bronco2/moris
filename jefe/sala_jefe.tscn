@@ -186,9 +186,9 @@ scale = Vector2( 1.31478, 1.31478 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 1367.83, -1005.9 )
-
 [node name="Boss" parent="." instance=ExtResource( 1 )]
 position = Vector2( -3457.97, -2147.17 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1367.83, -1005.9 )
