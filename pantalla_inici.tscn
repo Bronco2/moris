@@ -128,7 +128,6 @@ text = "Les aventures del professor Moris"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Button_JUGAR" to="." method="_on_Button_JUGAR_pressed"]
 [connection signal="pressed" from="Button_CONTROLS" to="." method="_on_Button_CONTROLS_pressed"]
 [connection signal="pressed" from="Button_INFO" to="." method="_on_Button_INFO_pressed"]

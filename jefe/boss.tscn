@@ -289,25 +289,28 @@ extents = Vector2( 647.468, 1642.74 )
 [node name="Boss" type="Node2D"]
 position = Vector2( 5.00124, 2.916 )
 
-[node name="Label" type="Label" parent="."]
-margin_left = 469.281
-margin_top = 255.375
-margin_right = 2617.28
-margin_bottom = 631.375
+[node name="boss" type="KinematicBody2D" parent="."]
+position = Vector2( -1304.98, 42.753 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="boss"]
+margin_left = 469.0
+margin_top = 255.0
+margin_right = 2617.0
+margin_bottom = 631.0
 custom_fonts/font = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="boss" type="KinematicBody2D" parent="."]
-position = Vector2( 0.280933, 0.374578 )
-script = ExtResource( 1 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="boss"]
-position = Vector2( 1335.33, 1278.76 )
+position = Vector2( 1312.59, 1329.14 )
 frames = SubResource( 2 )
-animation = "att2"
-frame = 4
+animation = "iddle"
+frame = 6
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="boss"]
@@ -317,18 +320,15 @@ scale = Vector2( 0.725074, 0.710881 )
 frames = SubResource( 47 )
 
 [node name="hitbox" type="CollisionShape2D" parent="boss"]
-visible = false
 position = Vector2( 868.396, 1649.17 )
 shape = SubResource( 48 )
 
 [node name="hitbox2" type="CollisionShape2D" parent="boss"]
-visible = false
 position = Vector2( 1735.18, 1648.53 )
 shape = SubResource( 48 )
 disabled = true
 
 [node name="attack" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1698.06, 1525.77 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/attack"]
@@ -337,7 +337,6 @@ shape = SubResource( 49 )
 disabled = true
 
 [node name="attack2" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1945.77, 2581.81 )
 rotation = 1.57053
 
@@ -356,7 +355,6 @@ position = Vector2( -2434.74, 1507.15 )
 shape = SubResource( 51 )
 
 [node name="range" type="Area2D" parent="boss"]
-visible = false
 position = Vector2( 1704.76, 484.664 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boss/range"]
