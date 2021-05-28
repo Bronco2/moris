@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://fotos/fletxa_esq.png" type="Texture" id=1]
 [ext_resource path="res://fotos/mouse-left-button.png" type="Texture" id=2]
@@ -123,8 +123,9 @@ bg_color = Color( 1, 1, 1, 1 )
 [sub_resource type="StyleBoxFlat" id=39]
 bg_color = Color( 1, 1, 1, 1 )
 
-[sub_resource type="StyleBoxFlat" id=40]
-bg_color = Color( 1, 1, 1, 1 )
+[sub_resource type="DynamicFont" id=40]
+size = 36
+font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxFlat" id=41]
 bg_color = Color( 1, 1, 1, 1 )
@@ -142,25 +143,6 @@ bg_color = Color( 1, 1, 1, 1 )
 bg_color = Color( 1, 1, 1, 1 )
 
 [sub_resource type="DynamicFont" id=46]
-size = 36
-font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxFlat" id=47]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=48]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=49]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=50]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="StyleBoxFlat" id=51]
-bg_color = Color( 1, 1, 1, 1 )
-
-[sub_resource type="DynamicFont" id=52]
 size = 36
 font_data = ExtResource( 5 )
 
@@ -211,44 +193,14 @@ custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
 text = "D"
 
-[node name="Button5" type="Button" parent="Panel"]
-margin_left = 94.0
+[node name="Button7" type="Button" parent="Panel"]
+margin_left = 169.682
 margin_top = 405.0
-margin_right = 154.0
+margin_right = 229.682
 margin_bottom = 465.0
 custom_styles/hover = SubResource( 10 )
 custom_styles/pressed = SubResource( 11 )
 custom_styles/focus = SubResource( 12 )
-custom_styles/normal = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "F"
-
-[node name="Button6" type="Button" parent="Panel"]
-margin_left = 94.0
-margin_top = 469.0
-margin_right = 154.0
-margin_bottom = 529.0
-custom_styles/hover = SubResource( 13 )
-custom_styles/pressed = SubResource( 14 )
-custom_styles/focus = SubResource( 15 )
-custom_styles/normal = SubResource( 6 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
-custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
-text = "O"
-
-[node name="Button7" type="Button" parent="Panel"]
-margin_left = 281.682
-margin_top = 405.0
-margin_right = 341.682
-margin_bottom = 465.0
-custom_styles/hover = SubResource( 16 )
-custom_styles/pressed = SubResource( 17 )
-custom_styles/focus = SubResource( 18 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -262,9 +214,9 @@ margin_top = 149.0
 margin_right = 572.0
 margin_bottom = 209.0
 rect_scale = Vector2( 0.117, 0.115 )
-custom_styles/hover = SubResource( 19 )
-custom_styles/pressed = SubResource( 20 )
-custom_styles/focus = SubResource( 21 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -281,9 +233,9 @@ margin_left = 512.0
 margin_top = 213.0
 margin_right = 572.0
 margin_bottom = 273.0
-custom_styles/hover = SubResource( 22 )
-custom_styles/pressed = SubResource( 23 )
-custom_styles/focus = SubResource( 24 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/focus = SubResource( 18 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -297,9 +249,9 @@ margin_left = 832.0
 margin_top = 173.0
 margin_right = 892.0
 margin_bottom = 233.0
-custom_styles/hover = SubResource( 25 )
-custom_styles/pressed = SubResource( 26 )
-custom_styles/focus = SubResource( 27 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/focus = SubResource( 21 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -316,9 +268,9 @@ margin_top = 405.0
 margin_right = 572.0
 margin_bottom = 465.0
 rect_scale = Vector2( 0.117, 0.115 )
-custom_styles/hover = SubResource( 28 )
-custom_styles/pressed = SubResource( 29 )
-custom_styles/focus = SubResource( 30 )
+custom_styles/hover = SubResource( 22 )
+custom_styles/pressed = SubResource( 23 )
+custom_styles/focus = SubResource( 24 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -332,9 +284,9 @@ margin_left = 512.0
 margin_top = 469.0
 margin_right = 572.0
 margin_bottom = 529.0
-custom_styles/hover = SubResource( 31 )
-custom_styles/pressed = SubResource( 32 )
-custom_styles/focus = SubResource( 33 )
+custom_styles/hover = SubResource( 25 )
+custom_styles/pressed = SubResource( 26 )
+custom_styles/focus = SubResource( 27 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -348,9 +300,9 @@ margin_top = 437.0
 margin_right = 644.0
 margin_bottom = 497.0
 rect_scale = Vector2( 0.117, 0.115 )
-custom_styles/hover = SubResource( 34 )
-custom_styles/pressed = SubResource( 35 )
-custom_styles/focus = SubResource( 36 )
+custom_styles/hover = SubResource( 28 )
+custom_styles/pressed = SubResource( 29 )
+custom_styles/focus = SubResource( 30 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -365,9 +317,9 @@ margin_top = 181.0
 margin_right = 1160.59
 margin_bottom = 693.0
 rect_scale = Vector2( -0.115, 0.115 )
-custom_styles/hover = SubResource( 37 )
-custom_styles/pressed = SubResource( 38 )
-custom_styles/focus = SubResource( 39 )
+custom_styles/hover = SubResource( 31 )
+custom_styles/pressed = SubResource( 32 )
+custom_styles/focus = SubResource( 33 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -381,9 +333,9 @@ margin_left = 159.0
 margin_top = 213.0
 margin_right = 219.0
 margin_bottom = 273.0
-custom_styles/hover = SubResource( 40 )
-custom_styles/pressed = SubResource( 41 )
-custom_styles/focus = SubResource( 42 )
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 35 )
+custom_styles/focus = SubResource( 36 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -396,9 +348,9 @@ margin_left = 95.0
 margin_top = 213.0
 margin_right = 155.0
 margin_bottom = 273.0
-custom_styles/hover = SubResource( 43 )
-custom_styles/pressed = SubResource( 44 )
-custom_styles/focus = SubResource( 45 )
+custom_styles/hover = SubResource( 37 )
+custom_styles/pressed = SubResource( 38 )
+custom_styles/focus = SubResource( 39 )
 custom_styles/normal = SubResource( 6 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -411,7 +363,7 @@ margin_left = 55.0
 margin_top = 85.0
 margin_right = 202.0
 margin_bottom = 99.0
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Direcció del moviment"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -422,7 +374,7 @@ margin_left = 480.0
 margin_top = 85.0
 margin_right = 652.0
 margin_bottom = 135.0
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Atac especial"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -433,34 +385,29 @@ margin_left = 824.0
 margin_top = 85.0
 margin_right = 899.0
 margin_bottom = 135.0
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Pausa"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="Panel"]
-margin_left = 87.0
-margin_top = 330.0
-margin_right = 157.0
-margin_bottom = 380.0
-custom_fonts/font = SubResource( 46 )
-text = "Escut"
-
 [node name="Label3" type="Label" parent="Panel"]
-margin_left = 276.092
+margin_left = 164.092
 margin_top = 331.293
-margin_right = 346.092
+margin_right = 243.092
 margin_bottom = 381.293
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Curar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label5" type="Label" parent="Panel"]
 margin_left = 464.0
 margin_top = 330.0
 margin_right = 634.0
 margin_bottom = 380.0
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 40 )
 text = "Atac normal"
 
 [node name="Torna" type="Button" parent="Panel"]
@@ -469,12 +416,12 @@ margin_left = 739.828
 margin_top = 391.284
 margin_right = 965.828
 margin_bottom = 492.284
-custom_styles/hover = SubResource( 47 )
-custom_styles/pressed = SubResource( 48 )
-custom_styles/focus = SubResource( 49 )
-custom_styles/disabled = SubResource( 50 )
-custom_styles/normal = SubResource( 51 )
-custom_fonts/font = SubResource( 52 )
+custom_styles/hover = SubResource( 41 )
+custom_styles/pressed = SubResource( 42 )
+custom_styles/focus = SubResource( 43 )
+custom_styles/disabled = SubResource( 44 )
+custom_styles/normal = SubResource( 45 )
+custom_fonts/font = SubResource( 46 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_hover = Color( 0.0784314, 0.596078, 0.627451, 1 )
@@ -483,4 +430,5 @@ text = "Torna"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Panel/Torna" to="." method="_on_Torna_pressed"]

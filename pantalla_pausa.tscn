@@ -73,9 +73,9 @@ __meta__ = {
 }
 
 [node name="Torna_al_menu" type="Button" parent="Panel"]
-margin_left = 139.952
+margin_left = 90.952
 margin_top = 348.151
-margin_right = 407.952
+margin_right = 358.952
 margin_bottom = 466.151
 rect_pivot_offset = Vector2( -429.287, -479.306 )
 custom_styles/hover = SubResource( 3 )
@@ -93,9 +93,9 @@ __meta__ = {
 }
 
 [node name="Continua" type="Button" parent="Panel"]
-margin_left = 631.161
+margin_left = 384.161
 margin_top = 348.151
-margin_right = 899.161
+margin_right = 652.161
 margin_bottom = 466.151
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 9 )
@@ -111,5 +111,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="sortir" type="Button" parent="Panel"]
+margin_left = 682.161
+margin_top = 348.151
+margin_right = 950.161
+margin_bottom = 466.151
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.0784314, 0.596078, 0.627451, 1 )
+custom_colors/font_color_pressed = Color( 0.0784314, 0.596078, 0.627451, 1 )
+text = "Surt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Panel/Torna_al_menu" to="." method="_on_Torna_al_menu_pressed"]
 [connection signal="pressed" from="Panel/Continua" to="." method="_on_Continua_pressed"]
+[connection signal="pressed" from="Panel/sortir" to="." method="_on_sortir_pressed"]

@@ -16,3 +16,7 @@ func _on_Torna_al_menu_pressed():
 func _on_Continua_pressed():
 	get_tree().paused = false
 	visible = false
+
+
+func _on_sortir_pressed():
+	get_tree().quit()

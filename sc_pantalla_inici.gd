@@ -24,3 +24,7 @@ func _on_Button_CONTROLS_pressed():
 
 func _on_Button_INFO_pressed():
 	get_tree().change_scene("res://pantalla_info.tscn")
+
+
+func _on_Button_SURT_pressed():
+	get_tree().quit()

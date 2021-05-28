@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://lletres/Scratch Boys.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://carita fachera.png" type="Texture" id=2]
@@ -11,7 +11,16 @@ outline_size = 8
 outline_color = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.137255, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.137255, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 45
 outline_color = Color( 0.0470588, 0.0392157, 0.0392157, 1 )
 font_data = ExtResource( 1 )
@@ -60,13 +69,40 @@ texture = ExtResource( 2 )
 offset = Vector2( 0, 108.659 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 447.0
+margin_left = 552.0
 margin_top = 396.0
-margin_right = 589.0
+margin_right = 694.0
 margin_bottom = 495.0
-custom_fonts/font = SubResource( 2 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.113725, 0.717647, 0.619608, 1 )
+custom_colors/font_color_pressed = Color( 0.113725, 0.717647, 0.619608, 1 )
+text = "SURT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="surt" type="Button" parent="."]
+margin_left = 321.0
+margin_top = 396.0
+margin_right = 463.0
+margin_bottom = 495.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.113725, 0.717647, 0.619608, 1 )
+custom_colors/font_color_pressed = Color( 0.113725, 0.717647, 0.619608, 1 )
 text = "MENU"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="surt" to="." method="_on_surt_pressed"]
